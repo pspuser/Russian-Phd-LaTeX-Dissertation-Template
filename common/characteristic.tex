@@ -152,35 +152,35 @@
                 bib1,bib2,%
         }%
 	\publications\ Основные результаты по теме диссертации изложены
-	\setcounter{citeauthorscwostot}{\value{citeauthorscopus}} % вместе setcounter и addtocounter добавляют пробел между словами. По-этому они так раскиданы.
-        в~\arabic{citeauthor}~печатных изданиях,
-	\addtocounter{citeauthorscwostot}{\value{citeauthorwos}}
-	\arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК\sloppy
-	\ifnum \value{citeauthorscwostot}>0
-	, \arabic{citeauthorscwostot} "--- в~периодических научных журналах, индексируемых Web of Science и Scopus\sloppy
-	\fi
-	\ifnum \value{citeauthorconf}>0
-	, \arabic{citeauthorconf} "--- в~тезисах докладов.
-	\else
-	.
-	\fi
-    \end{refsection}
-    \begin{refsection}[vak,wos,scopus,papers,conf]%Блок, позволяющий отобрать из всех работ автора наиболее значимые, и только их вывести в автореферате, но считать в блоке выше общее число работ
-        \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=2]%
-        \printbibliography[heading=countauthorwos, env=countauthorwos, keyword=biblioauthorwos, section=2]%
-        \printbibliography[heading=countauthorscopus, env=countauthorscopus, keyword=biblioauthorscopus, section=2]%
-        \printbibliography[heading=countauthorothers, env=countauthorothers, keyword=biblioauthorothers, section=2]%
-        \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=2]%
-        \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=2]%
+%	\setcounter{citeauthorscwostot}{\value{citeauthorscopus}} % вместе setcounter и addtocounter добавляют пробел между словами. По-этому они так раскиданы.
+%        в~\arabic{citeauthor}~печатных изданиях,
+%	\addtocounter{citeauthorscwostot}{\value{citeauthorwos}}
+%	\arabic{citeauthorvak} из которых изданы в журналах, рекомендованных ВАК\sloppy
+%	\ifnum \value{citeauthorscwostot}>0
+%	, \arabic{citeauthorscwostot} "--- в~периодических научных журналах, индексируемых Web of Science и Scopus\sloppy
+%	\fi
+%	\ifnum \value{citeauthorconf}>0
+%	, \arabic{citeauthorconf} "--- в~тезисах докладов.
+%	\else
+%	.
+%	\fi
+%    \end{refsection}
+%    \begin{refsection}[vak,wos,scopus,papers,conf]%Блок, позволяющий отобрать из всех работ автора наиболее значимые, и только их вывести в автореферате, но считать в блоке выше общее число работ
+%        \printbibliography[heading=countauthorvak, env=countauthorvak, keyword=biblioauthorvak, section=2]%
+%        \printbibliography[heading=countauthorwos, env=countauthorwos, keyword=biblioauthorwos, section=2]%
+ %       \printbibliography[heading=countauthorscopus, env=countauthorscopus, keyword=biblioauthorscopus, section=2]%
+  %      \printbibliography[heading=countauthorothers, env=countauthorothers, keyword=biblioauthorothers, section=2]%
+  %      \printbibliography[heading=countauthorconf, env=countauthorconf, keyword=biblioauthorconf, section=2]%
+   %     \printbibliography[heading=countauthor, env=countauthor, keyword=biblioauthor, section=2]%
         
-        \nocite{Chistyakov_2016}%vak
-        \nocite{Gleim:15}
-        \nocite{Gleim:16}
-        \nocite{Gleĭm:17}
+    %    \nocite{Chistyakov_2016}%vak
+    %    \nocite{Gleim:15}
+    %    \nocite{Gleim:16}
+    %    \nocite{Gleĭm:17}
         
-        \nocite{bib1}%other
-        \nocite{confbib1}%conf
-    \end{refsection}
+     %   \nocite{bib1}%other
+     %   \nocite{confbib1}%conf
+   \end{refsection}
 }
 % При использовании пакета \verb!biblatex! для автоматического подсчёта
 % количества публикаций автора по теме диссертации, необходимо
