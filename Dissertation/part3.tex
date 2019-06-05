@@ -15,6 +15,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Границы применимости атаки с навязыванием ключа} \label{sec:ch3/sec2}
 
+ \begin{figure}[ht]
+  \centering
+  \includegraphics{Palways.png}
+  \caption{Методика определения границ применимости}
+  \label{fig:Palways}
+\end{figure}
+
 
  \begin{figure}[ht]
   \centering
@@ -32,6 +39,20 @@
   \caption{Принципиальная оптическая схема эксперимента}
   \label{fig:Scheme_2.7}
 \end{figure}
+
+\begin{table}
+	\caption{\label{tab:blinding}Calculated parameters for successful control of ID210 detector in SCW QKD scheme.}
+	\begin{tabular}[t]{c c c c}
+	\hline\hline
+	\makecell{Eve's faked-state\\ power in...} & \makecell{Blinding\\ power ($\nano\watt$)} & $E_\text{always}$ ($\femto\joule$) & $E_\text{never}$ ($\femto\joule$) \\
+	\hline
+	\makecell{subcarriers after\\ filtering} & 35 & 25.8 & 15.4 \\
+	\makecell{spectrum before\\ modulation} & 700 & 516 & 308 \\
+	\makecell{spectrum entering\\ Bob's module} & 3056 & 2252 & 1345 \\
+	\hline\hline
+	\end{tabular}
+\end{table}
+
 
 \pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
