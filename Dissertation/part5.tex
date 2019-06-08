@@ -54,36 +54,49 @@
 
 \section{Вероятности срабатываний детекторов} \label{ch:ch5/sect5}
 
- Spectral filter located after beam splitter reflects central optical mode ($k=0$). Hence mean photon number at the entrance of the detector may be found as
+ Известно, что оптический фильтр отражает центральную оптическую моду ($k=0$). Значит, среднее число фотоном на входе в каждый детектор может быть найдена как \ref{nph1}. 
+ 
 \begin{align}\label{nph1}
     n(\Delta\varphi)_{1,2}&=\mu_0\eta_c\Bigg(\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2 + \vartheta|d_{0k}^{S}(\beta)|^2 \pm \nonumber \\
     &\pm \cos(\varphi_0)\Big(\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2e^{i\Delta\varphi k}+ \vartheta|d_{0k}^{S}(\beta)|^2 \Big) \Bigg),
 \end{align}
-where $\Delta\varphi=\varphi_B-\varphi_A$, $\varphi_0$ is relative optical phase between pulses of Alice and Bob, $\vartheta \ll 1$ is part of central mode ($k=0$) due to imperfect spectral filtering. Using the properties of d-function in \cite{varshalovich1988quantum} we simplify previous expression as follows
+
+где $\Delta\varphi=\varphi_B-\varphi_A$, $\varphi_0$ это относительная оптическая фаза между импульсами отправителя (Алисы) и получателя (Боб), $\vartheta \ll 1$ часть центральной моды ($k=0$) проходящая через фильтр, ввиду ограниченности его характеристики. Используя свойства d-функци из \cite{varshalovich1988quantum}, можно упростить предыдущее выражение \ref{nph}
+
 \begin{align}
     n(\Delta\varphi)_{1,2}=\mu_0\eta_c\Big(1-(1-\vartheta)(1\mp\cos(\varphi_0))|d_{00}^{S}(\beta)|^2 \pm \nonumber \\
     \pm\cos(\varphi_0)d_{00}^{S}(\beta')\Big) \label{nph},
 \end{align}
-where argument $\beta'$ is as follows
+
+где аргумент $\beta'$ получен следующим образом \ref{betaappox}. 
+
 \begin{equation} \label{betaappox}
     \cos(\beta')=\cos^2(\beta) \mp \sin^2(\beta)\cos(\Delta\varphi).
 \end{equation}
-In order to estimate detection probability we use linear Mandel approximation considering small intensities ($n(\Delta\varphi)_{1,2} \ll 1$):
+
+Чтобы оценить вероятность срабатывания воспользуемся линейным приближением Манделя, предполагая слабые интенсивности ($n(\Delta\varphi)_{1,2} \ll 1$):
+
 \begin{eqnarray}
     \mathcal{P}_{1,2}^{+}(\Delta\varphi)=\left(n(\Delta\varphi)_{1,2}\eta_DF+\gamma_{dark}\right)\Delta t, \label{pdet}
 \end{eqnarray}
-where $\eta_D$ is quantum efficiency, $F$ is frequency of phase changing, $\gamma_{dark}$ is frequency of detector's dark counts, and $\Delta t$ is gating time of the detector. Further we choose $\Delta t F=1$ for simplicity. Absence of detection event we denote as $\mathcal{P}_{1,2}^{-}(\Delta\varphi)=1-\mathcal{P}_{1,2}^{+}(\Delta\varphi)$.     
+
+где $\eta_D$ квантовая эффективность, $F$ частота смены состояний, $\gamma_{dark}$ частота темновых отсчетов детектора одиночных фотонов, и $\Delta t$ время окна срабатывания. Для простоты положим $\Delta t F=1$. Отсутствие срабатывания определим, как $\mathcal{P}_{1,2}^{-}(\Delta\varphi)=1-\mathcal{P}_{1,2}^{+}(\Delta\varphi)$.     
 
 
+Используем несколько полезных приближений, которые помогут оценить квантовый коэффициент ошибок по битам (QBER) и скорости формирования просеянного ключа. Для начала положим, что число взаимодействующих мод велико ($S\rightarrow \infty$), что действительно так для стандартных волоконно-оптических модуляторов. Тогда можно использовать приближение d-функций следующим образом:
 
-We introduce useful approximations that help us estimate quantum bit error rate (QBER) and sifted key rate. First of all we consider the case of large number of interaction modes ($S\rightarrow \infty$) which is true for standard optical fiber modulators. One may use approximation of d-function as follows:
 \begin{align}
 d_{nk}^S(\beta) &\xrightarrow{S\rightarrow \infty} J_{n-k}(m), \label{limdj} \\
 \beta &\propto m, \label{propto}
 \end{align}
-where $J_k(m)$ is Bessel function of the first kind. Considering small $m$, which is also the case, and recalling classical modulation theory we use first order series approximation of Bessel function.
-Also according to Eq.~\ref{betam} $\beta \rightarrow 0$ hence one may use first order series approximations to express Eq.~\ref{betaappox} in terms of $m$ implying proportionality in Eq.~\ref{propto}.
-Finally we derive Eq.~\ref{pdet} as follows:
+где $J_k(m)$ функция Бесселя первого порядка. Полагая значение $m$ малым, что действительно так, в соотвествии с теорией классической модуляции воспользуемся приближением первого порядка функции Бесселя. 
+
+
+Так в соответствии с уравнение \ref{betam} $\beta \rightarrow 0$, следовательно можно использовать аппроксимации первого порядка для выражения \ref{betaappox} в терминах $m$ подразумевая пропорциональность в уравнении \ref{propto}.
+
+
+Определим уравнение~\ref{pdet} следующим образом:
+
 \begin{align}\label{pdet1}
  \mathcal{P}_{1,2}^{+}(\Delta\varphi)&=\mu\eta\Big(1\pm\cos(\Delta\varphi)\cos(\varphi_0)\Big)+ \nonumber
  \\
@@ -91,13 +104,13 @@ Finally we derive Eq.~\ref{pdet} as follows:
 \end{align}
 
 
-where $\eta$ is total optical transmission including quantum efficiency, $p_{dark}=\gamma_{dark}\Delta t$ is probability of dark count in time interval $\Delta t$, and $\mu$ and $\mu_c$ are the mean number of photons at the sidebands and at the central mode respectively right after the modulation defined as follows
+где $\eta$ полная оптическая пропускная способность квантового канала с учетом квантовой эффективности детектора, $p_{dark}=\gamma_{dark}\Delta t$ это вероятность темнового срабатывания во временном интервале $\Delta t$, и $\mu$ и $\mu_c$ это среднее число фотонов на боковых и на центральной моде соотвественно после модуляции, как определено:
+
 \begin{align}
     \mu&=\mu_0\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2, \\
     \mu_c&=\mu_0-\mu=\mu_0(1-\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2).
 \end{align}
-Expression in Eq.~\ref{pdet1} gives us explicit relations to experimental parameters and demonstrates how they impact detection probabilities.
-
+Выраение в уравнени~\ref{pdet1} даёт точное соотношение между экспериментальными параметрами и показывает, как они влияют на вероятности детектирования квантовых состояний. 
 
 
 \pagebreak
@@ -108,7 +121,7 @@ Expression in Eq.~\ref{pdet1} gives us explicit relations to experimental parame
 
  \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.25]{ExperimentTF.png}
+  \includegraphics[scale=0.2]{ExperimentTF.png}
   \caption{Зависимость количества отсчетов в результате интерференции от разности фаз модулирующих сигналов}
   \label{fig:Experimental_TF}
 \end{figure}
@@ -119,23 +132,27 @@ Expression in Eq.~\ref{pdet1} gives us explicit relations to experimental parame
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Оценка коэффициента битовых ошибок и скорости формирования ключа} \label{ch:ch5/sect7}
 
-Further we consider only cases where only one of detectors fires. Thus the detection probabilities $R$ is denoted as
+Далее рассмотрим только те случаи, где срабатывание происходит только на одном из детекторов в единицу времени.  Таким образом, вероятности срабатываний $R$ определяются как:
+
 \begin{align}
     R&=\Big(\mathcal{P}_{1}^{+}\mathcal{P}_{2}^{-}(\Delta\varphi=\varphi_m)+\mathcal{P}_{1}^{-}\mathcal{P}_{2}^{+}(\Delta\varphi=\pi+\varphi_m)+ \nonumber \\
     &+\mathcal{P}_{1}^{+}\mathcal{P}_{2}^{-}(\Delta\varphi=\pi+\varphi_m)+\mathcal{P}_{1}^{-}\mathcal{P}_{2}^{+}(\Delta\varphi=\varphi_m)\Big),
 \end{align}
 
 
+где $\varphi_m$ средняя величина несоответствия фаз $\varphi_A$ и $\varphi_B$. Первые два слагаемых - это вероятности успешного определения битов легитимными пользователями, тогда как оставшиеся два слагаемых - вероятности смены бита на противоположный (bitflip) (полагая $\varphi_0 \approx 0$). Таким образом, можно определить выражение для QBER $Q$ следующим образом:
 
-where $\varphi_m$ is mean phase-mismatch between phases $\varphi_A$ and $\varphi_B$. The first two summand are probabilities of successful bit identification by legitimate users while the second two summands are probabilities of bitflip (assuming $\varphi_0 \approx 0$). Thus one may derive expression for QBER $Q$ as follows
 \begin{align}
     Q=\frac{\mathcal{P}_{1}^{-}\mathcal{P}_{2}^{+}(\Delta\varphi=\varphi_m)+\mathcal{P}_{1}^{+}\mathcal{P}_{2}^{-}(\Delta\varphi=\pi+\varphi_m)}{R}.
 \end{align}
-Finally one may derive expression that estimates average sifted key rates $K$ (identical bits but correlated with Eve hence privacy amplification is necessary)
+
+
+Наконец, можно определить выражение для оценки среднего значения скорости формирования просеянного ключа $K$ (одинаковые биты между легитимными пользователями, но коррелирующие с возможным результатом у злоумышленника, что требуется проведения процедуры усиления секретности)
 \begin{equation}
     K=FR(1-h(Q)),
 \end{equation}
-where $h(Q)$ is binary entropy function.
+где $h(Q)$ это функция двоичной энтропии. 
+
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
