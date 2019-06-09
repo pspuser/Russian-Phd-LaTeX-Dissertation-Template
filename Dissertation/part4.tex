@@ -26,10 +26,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Когерентные состояния после прохождения светоделителя} \label{ch:ch4/sect2}
  
+Рассмотрим следующую систему: на вход светоделителя 2х2 подается когерентное состояние $| \psi \rangle_{\alpha}$, формируемое лазерным источником Л1. На второй порт поступает вакуумное состояние $| \psi \rangle_{\beta}$. При этом:
+
+\begin{equation}
+	| \psi \rangle_{\alpha} = | \alpha_{0} e^{i\phi_{0}k} \rangle \\
+\end{equation}
+
+\begin{equation}
+	| \psi \rangle_{\beta} = | vac \rangle \\
+\end{equation}
+
+
+На обоих выходах светоделителя будет состояние  $| \frac{\alpha_{0}}{\sqrt{2}} \rangle$, поступающее на электро-оптические фазовые модуляторы ФМ1 и ФМ2. В результате фазовой модуляции состояние преобразуется в $| \alpha_{1} \rangle$ и $| \alpha_{2} \rangle$. 
+
 
  \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.8]{Coherent_states_beamsplitting.png}
+  \includegraphics[scale=0.6]{Coherent_states_beamsplitting.png}
   \caption{Принципиальная схема наблюдения динамики когерентных состояний}
   \label{fig:Coherent_states_beamsplitting}
 \end{figure}
@@ -39,23 +52,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Когерентные состояния после модуляции} \label{ch:ch4/sect3}
 
-Отличительно особенностью систем квантовой коммуникации на боковых частотах модулированного излучения является генерация многомодовых когерентных состояний на разных оптических модах, зависящих от частоты модулирующего сигнала. 
+Отличительно особенностью систем квантовой коммуникации на боковых частотах модулированного излучения является генерация многомодовых когерентных состояний на разных оптических модах, зависящих от частоты модулирующего сигнала, как показано на рисунке \ref{fig:multimodes}. 
 
  \begin{figure}[ht]
   \centering
-  \includegraphics[scale=0.5]{Modes_rus.pdf}
+  \includegraphics[scale=0.6]{Modes_rus.pdf}
   \caption{Принципиальная схема генерации боковых частот}
   \label{fig:multimodes}
 \end{figure}
+
+
+Определим приготовленные состояния. Входное (немодулированное) состояние на стороне модулятора отправителя (Алиса) и получателя (Боб) (далее именуемые, как $A$ or $B$) определяется, как $|\sqrt{\mu_0}\rangle_0\otimes|\mathrm{vac}\rangle_{SB}$, где $|\mathrm{vac}\rangle_{SB}$ это вакуумное состояние на боковых и $|\sqrt{\mu_0}\rangle_0$ это когерентное состояние несущей частоты с амплитудой, определенной средним числом фотонов $\mu_0$ в окне пропускания. формируемая когерентным монохроматическим излучением с оптической частотой $\omega$. Фаза несущей волны принимается как опорная и все остальные фазы считаются по отношению к ней. Электро-оптический фазовый модулятор (с частотой колебаний микроволнового поля $\Omega$ и её фазой $\varphi_A$ или $\varphi_B$) перераспределяет энергию между взаимодействующими модами (поле на выходе модулятора приобретает боковые частоты $\omega_k=\omega+k\Omega$, ограничим рассматриваемый нами случай $2S$ боковыми частотами и пусть целое число $k$ мод ограничено пределами $-S\le k\le S$), так, что состояние поля на выходе модулятора - это многомодовое когерентное состояние: 
+%
+\begin{equation}\label{phi}
+|\psi_0(\varphi_j)\rangle = \bigotimes_{k=-S}^S|{\alpha_k(\varphi_j)}\rangle_k,
+\end{equation}
+%
+где $j$ это и $A$, и $B$ (определяющее Алису или Боба), а амплитуды имеют следующий вид: 
+%
+\begin{equation}\label{alpha}
+\alpha_k(\varphi_j)=\sqrt{\mu_0}d^S_{0k}(\beta)e^{i\varphi_jk},
+\end{equation}
+%
+и $d^S_{nk}(\beta)$ это d-функция Вигнера, взятая из квантовой теории углового момента \cite{varshalovich1988quantum}, $\beta$ определяется индексом модуляции $m$, который без учета дисперсии в среде модулятора можно выразить: 
+%
+\begin{equation}\label{betam}
+\cos{({\beta})}=1-\frac{1}{2}{\left(\frac{m}{S+0.5}\right)^2},
+\end{equation}
+где $S$ количество взаимодействующий мод, принимаемое очень большим. 
 
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Результат интерференции когерентных состояний после модуляции} \label{ch:ch4/sect4}
 
+После распространения по квантовому каналу амплитуда когерентного состояния ослабляется и имеет следующий вид:
+
+\begin{equation}
+\sqrt{\eta_c}\alpha_k(\varphi_j)=\sqrt{\mu_0\eta_c}d^S_{0k}(\beta)e^{i\varphi_jk},
+\end{equation}
+
+
+где $\eta_c$ оптическое пропускание канала. На втором светоделителе состояния преобразуются в следующий вид: 
+
+\begin{align}\label{states}
+\Big|\frac{\alpha_A \pm \alpha_Be^{i\varphi_0}}{2}\Big\rangle_{1,2} &= \bigotimes_{k=-S}^{S}\Big|\sqrt{\frac{\mu_0\eta_c}{2}}d_{0k}^{S}(\beta)\left(e^{i\varphi_Ak}\pm e^{i(\varphi_Bk+\varphi_0)}\right)\Big\rangle_k.
+\end{align}
+Выражение с плюсом определяется, как состояние на первом выходе второго светоделителя (нижний индекс $1$), а выражение с минусом как состояние на втором выходе второго светоделителя (нижний индекс  $2$). 
+ 
 \begin{figure}[ht]
  \centering
-  \includegraphics[scale=0.5]{Coherent_state_beamsplitting2.png}
+  \includegraphics[scale=0.6]{Coherent_state_beamsplitting2.png}
   \caption{Принципиальная схема наблюдения динамики когерентных состояний}
   \label{fig:Coherent_states_beamsplitting2}
 \end{figure}
@@ -65,6 +112,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Зависимость результата интерференции от разности фаз когерентных состояний} \label{ch:ch4/sect5}
 
+After the relative phase of optical signals is adjusted two states enter at the second interfering beam splitter ($BS2$). The description of the states at the output of the beamsplitter are presented in Eq.~\ref{states}. The following discussion assuming relative optical phase $\phi_0\approx0$. If the the phase difference between Alice's and Bob's modulation signals is equal to zero ($\Delta\varphi=0$) the whole spectrum goes to the one arm, otherwise even modes of the spectrum (including the central carrier) go to the same arm and odd modes go to the second arm. In case of $\Delta\varphi=0$ we need to split our spectrum. Optical spectral filtering in Bob’s module aims at removing the relatively strong carrier wave since we assume that the sideband modes encodes quantum states. Unfortunately, in a practical SCW QKD system this wave can only be attenuated by a factor $\vartheta\ll1$, as it shown in Eq.~\ref{nph1}. Thus the mean photon number which arrives to the detector $D1$ can be calculated according to Eq.~\ref{nph}. It should be mentioned that since we use low mean photon number only the first pair of the sidebands is significant. Case of $\Delta\varphi=\pi$ demonstates non-trivial result. The multimode state splits at the beam splitter and the central mode (and all odd sidebands) goes in the first arm and all even sidebands (we assume that only the first pair of sidebands is significant) goes to the second arm. Thus optical phase justification may replace optical filtering in the one arm of the detection scheme. The indicator of successful optical phase adjustment is
+that the carrier is always staying in the first arm and is being detected by $D2$.
 
 \begin{figure}[ht]
  \centering
