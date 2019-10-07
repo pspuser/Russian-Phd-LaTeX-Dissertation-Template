@@ -185,8 +185,42 @@
 
 
 \pagebreak
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Выводы по главе} \label{ch:ch3/sec7}
+\section{Учёт возможной контратаки со стороны злоумышленника}\label{ch:ch3/sec7}
+
+In order to assess the feasibility of our idea we performed experimental testing of the countermeasure on by adding several components (marked red in \ref{fig:scw-setup}) to the SCW~QKD device designed at ITMO~University. We employed FOD 1204 optical power meter as D2, a fiber-optic Faraday mirror (AC Photonics PMFRDMR13211) as M and a 10 dB fixed attenuator as ATT. For now let us consider that Eve uses the same wavelength as Alice (an alternative strategy is discussed below, explaining the roles of SF1 and D1 in \ref{fig:scw-setup}). Insertion loss in C2 arms was around 1.6 dB. The experimental results are given in the fifth column of~\ref{tab:blinding2}. We managed to blind the APD using the technique described above, and the required faked-state power level (114.8 nW) resulted in registering a signal on D2 (7.8 nW), that was a clear indication of an attack in progress. We therefore confirmed that our countermeasure can be efficiently used for monitoring the faked-states attack.
+
+From \ref{tab:blinding2} one can see that blinding power used in countermeasure testing was a bit higher (but of the same order of magnitude) than one defined during initial experiments with APD described in results. The reason for this is that the experiment with realistic SCW~QKD setup was affected by fluctuations of optical parameters, such as insertion losses and SF2 extinction ratio. In order to estimate countermeasure efficiency for the blinding power lower boundary (35 nW) we calculated carrier power reflected from SF2 and passing through C2 into D2. It was found to be 2.2 nW, which is still way above D2 sensitivity lower limit (50 pW). Therefore these differences do not affect our conclusions. However, it may be beneficial to experimentally optimize ATT loss for any particular setup.
+%The first one is that the main goal of experiment was to prove that the idea of countermeasure proposed in this paper for the first time is reliable. As result it is clear that D2 should be sensitive to no less than 1 $\nano\watt$ optical power value in case of using $10~\deci\bel$ fixed attenuator. From the calculations the upper carrier mean optical power value for the case with 4560 $\nano\watt$ blinding power with taking into account insertion losses should be no more than 1300 $\nano\watt$ with the same value fixed attenuator used.
+
+Finally, let us analyze the case when Eve uses a wavelength outside of SF2 reflection spectrum. Indeed, since in SCW~QKD the quantum signals are registered in SF2 transmission band, while the carrier, which is used for monitoring purposes, is located in the reflection band, Eve could bypass our countermeasure by simply tuning the faked-state signal wavelength outside of SF2 reflection window. In that case the APD could be successfully controlled without alarming D2. To prevent this situation we suggest placing another narrow spectral filter SF1 at the Bob's module input. Its reflection spectrum should be centered around $\omega$ and the bandwidth must be close to $2\times\Omega$ (in our case, about 10 GHz). In such setup full signal spectrum reflects from SF1 and propagates into Bob's module, but radiation on any other frequency passes thorough the filter (as shown by dashed lines in \ref{fig:scw-setup}). An additional monitoring detector D1 could be placed after SF1 for reference. Eve would therefore be restricted to using frequencies in SF1 passband. Notably, she could try using bright light at the sideband frequency (instead of the carrier), but then this signal would be modulated at PSM2, its fraction would reflect from~SF2 and get detected by~D2.
+
+\begin{table}
+	\centering \caption{\label{tab:blinding2}Parameters for successful control of ID210 detector in SCW QKD scheme: calculated (columns 2-4) and defined during countermeasure testing (column 5). Dashes indicate irrelevant data (carrier energy).}
+	\begin{tabular}[t]{c c c c c}
+	\hline\hline
+	\makecell{Eve's faked-state\\ power in...} & \makecell{Blinding\\ power (nW)} & $E_\text{always}$ (fJ) & $E_\text{never}$ (fJ) & \makecell {Countermeasure\\testing power (nW)} \\
+	\hline
+	\makecell{Subcarriers after\\ filtering} & 35 & 25.8 & 15.4 & 114.8\\
+	\makecell{Spectrum before\\ modulation} & 700 & 516 & 308 & 2440\\
+	\makecell{Spectrum entering\\ Bob's module} & 4417 & 3256 & 1943 & 15395\\
+	\makecell{Reflected\\carrier spectrum} & 320 & -- & -- & 1127\\
+	%\makecell{\edited{before}\\$10~\deci\bel$ ATT} & 310 & X & X & 830\\
+	\makecell{D2 input} & 2.2 & -- & -- & 7.8\\
+	\hline\hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}
+	\centering \includegraphics{scw-setup.pdf}
+	\caption{Subcarrier-wave QKD scheme. Components shaded red (gray) are introduced as a countermeasure. PSM, electro-optical phase shift modulator; ATT, optical attenuator; C, circulator; SF, spectral filter; APD,  avalanche photodiode;  M, fiber-optic mirror; D, photodetector. Insets show optical spectra at different points.}
+	\label{fig:scw-setup}
+\end{figure}
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Выводы по главе} \label{ch:ch3/sec8}
 
 
 В \ref{ch:ch3} главе показано, что измерение величины оптического излучения на несущей частоте, отраженного от оптического фильтра, при помощи мониторного фотодиода в приемном блоке системы квантовой коммуникации на боковых частотах в диапазоне от 7 нВт до 2,93 мкВт с применением дополнительных мер в виде пассивного оптического аттенюатора номиналом 10 дБ для его защиты позволяет противостоять атаке с выведением детектора одиночных фотонов из режима Гейгера и навязыванием ключа нелегитимным пользователем. 
