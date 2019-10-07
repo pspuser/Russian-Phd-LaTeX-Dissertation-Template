@@ -64,146 +64,37 @@ Thereby according to the equations obtained in eq.~\ref{pnver} and eq.~\ref{rhor
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Характеристики компонентов экспериментального стенда} \label{ch:ch5/sec2}
+\section{Оценка скорости формирования секретного ключа в асимптотическом приближении} \label{ch:ch6/sec2}
 
-Значительную трудность представляет согласование спектральных характеристик Алисы и Боба. Даже при использовании одного источника для имитации хорошо скоррелированных лазеров, требуется подобрать оптические фильтры с максимально совпадающими характеристиками. В системе квантовой коммуникации частота модулирующего сигнала равна $\Omega = 4,8$~ГГц (рис.\ref{fig:RF_sin_osc} ). Значит, полоса спектрального фильтра не должна превышать величину $2\Omega$. Для этих целей используются волоконные узкополосные оптические фильтры на основе Брэгговских решеток. На рисунке \ref{fig:Spectrums} показаны измеренные характеристики максимально близких по серединному значению полосы пропускания фильтров. Уровень полуширины (FWHM) первого фильтра ОФ1 равен 48,8~пм (или 6,1~ГГц), а уровень полуширины (FWHM) второго фильтра ОФ2 равен 40~пм (или 5~ГГц). При этом разность центральных длин волн составляет 8~пм (или 1~ГГц). В ходе эксперимента лазер подстраивался таким образом, чтобы минимальная величина засветки от центральной проходила через оба оптических фильтра. Из-за несовпадения их характеристик повышался уровень шумов, вследствие чего ухудшалась видность картины интерференции.  
-
- \begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.8]{T-spectrums.png}
-  \caption{Спектральные характеристики оптических фильтров}
-  \label{fig:Spectrums}
-\end{figure}
-
-\pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Экспериментальный стенд} \label{ch:ch5/sec3}
-
-
-%\pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Зависимость интенсивности на боковых частотах от сдвига фаз в результате интерференции в классическом режиме} \label{ch:ch5/sec5}
-
-
-На первом этапе измерения проводились в классическом режиме с помощью измерителей оптической мощности и нулевом значении вносимых потерь ПОА. При этом один из измерителей мощности $Д3$ служил для обратной связи и подстройки оптической фазы между двумя плечами с помощью $ФМ4$ и $ГЕН2$. Когда разность оптических фаз была скомпенсирована, и центральная мода постоянно наблюдалась в одном из выходных плечей $СД2$, в ручном режиме последовательно производилась смеша фазовых состояний радиочастотных модулирующих сигналов посредством изменения значений в IQ-таблице ЦАПов с шагом $10^{\circ}$. 
-
-В результате наблюдалась картина на рисунке \ref{fig:Experimental_TF_classical}. Значение конструктивной интерференции на первом детекторе составило величину $I_{max}=6,3$~мкВт, а деструктивной -- $I_{min}=0,2$~мкВт, тогда как на втором $I_{max}=6,13$~мкВт, и $I_{min}=0,08$~мкВт, соответственно. 
-
- \begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.7]{Experimental_TF_classical.png}
-  \caption{Зависимость интенсивности на боковых частотах в результате интерференции от разности фаз модулирующих сигналов}
-  \label{fig:Experimental_TF_classical}
-\end{figure}
-
-Если определить отношение $I_{max}$ к $I_{min}$, как контраст, то в первом плече контраст был равен 31,5, а во втором -- 76.6. Видность интерференционной картины определяется как: 
+Finally one may derive expression that estimates average sifted key rates $C$ (identical bits but correlated with Eve hence privacy amplification is necessary)
 \begin{equation}
-	V=\frac{I_{max}-I_{min}}{I_{max}+I_{min}}
+    C=FR(1-h(Q)),
 \end{equation}
+where $h(Q)$ is binary entropy function.
 
-В первом случае видность составила $V_{1}=93,8\%$, во втором -- $V_{2}=97,4\%$
+To provide asymptotic key rates we use well-known method introduced by Devetak-Winter \cite{devetak2005distillation}.
 
-
-\pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Вероятности срабатываний детекторов} \label{ch:ch5/sec6}
-
- Известно, что оптический фильтр отражает центральную оптическую моду ($k=0$). Значит, среднее число фотоном на входе в каждый детектор может быть найдена как \ref{nph1}. 
- 
-\begin{align}\label{nph1}
-    n(\Delta\varphi)_{1,2}&=\mu_0\eta_c\Bigg(\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2 + \vartheta|d_{0k}^{S}(\beta)|^2 \pm \nonumber \\
-    &\pm \cos(\varphi_0)\Big(\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2e^{i\Delta\varphi k}+ \vartheta|d_{0k}^{S}(\beta)|^2 \Big) \Bigg),
-\end{align}
-
-где $\Delta\varphi=\varphi_B-\varphi_A$, $\varphi_0$ это относительная оптическая фаза между импульсами отправителя (Алисы) и получателя (Боб), $\vartheta \ll 1$ часть центральной моды ($k=0$) проходящая через фильтр, ввиду ограниченности его характеристики. Используя свойства d-функци из \cite{varshalovich1988quantum}, можно упростить предыдущее выражение \ref{nph}
-
-\begin{align}
-    n(\Delta\varphi)_{1,2}=\mu_0\eta_c\Big(1-(1-\vartheta)(1\mp\cos(\varphi_0))|d_{00}^{S}(\beta)|^2 \pm \nonumber \\
-    \pm\cos(\varphi_0)d_{00}^{S}(\beta')\Big) \label{nph},
-\end{align}
-
-где аргумент $\beta'$ получен следующим образом \ref{betaappox}. 
-
-\begin{equation} \label{betaappox}
-    \cos(\beta')=\cos^2(\beta) \mp \sin^2(\beta)\cos(\Delta\varphi).
+We have estimated Holevo information for multi-mode coherent states presented in Eq.~\ref{phi} according to \cite{kozubov2019finite}:
+\begin{equation}
+    \chi=h\left(\frac{1-e^{-\mu_0(1-d^S_{00}(2\beta))}}{2}\right)\approx h\left(\frac{1-e^{-2\mu}}{2}\right).
 \end{equation}
+It shows us the maximal amount of information Eve may obtain from the states in one channel. However TF QKD schemes have two independent channels. Hence Eve can perform independent measurements in two quantum channels and obtain the following amount of information:
+\begin{equation}
+    \tilde{\chi}=2(1-\chi)\chi+\chi^2.
+\end{equation}
+Thus asymptotic secure key rates $K$ is as follows:
+\begin{equation}
+     K=FR(1-\xi h(Q)-\tilde{\chi}),
+\end{equation}
+where $\xi$ is the error correction efficiency. 
+For calculations we use experimental parameters from one of the regimes used in Ref.~\cite{Gleim16,Miroshnichenko18}, which are close the implemented during experimental verification of our model: $F=100$ MHz, $\mu=0.1$, $\mu_0=4$, $\Delta\varphi=5^{\circ}$, $\vartheta=10^{-3}$, $\xi=1.15$, $\varphi_0=5^{\circ}$ $\eta_D=0.25$, $\gamma_{dark}= 10$ Hz. The simulation results are shown in Fig.~\ref{fig:fig2}.
 
-Чтобы оценить вероятность срабатывания воспользуемся линейным приближением Манделя, предполагая слабые интенсивности ($n(\Delta\varphi)_{1,2} \ll 1$):
-
-\begin{eqnarray}
-    \mathcal{P}_{1,2}^{+}(\Delta\varphi)=\left(n(\Delta\varphi)_{1,2}\eta_DF+\gamma_{dark}\right)\Delta t, \label{pdet}
-\end{eqnarray}
-
-где $\eta_D$ квантовая эффективность, $F$ частота смены состояний, $\gamma_{dark}$ частота темновых отсчетов детектора одиночных фотонов, и $\Delta t$ время окна срабатывания. Для простоты положим $\Delta t F=1$. Отсутствие срабатывания определим, как $\mathcal{P}_{1,2}^{-}(\Delta\varphi)=1-\mathcal{P}_{1,2}^{+}(\Delta\varphi)$.     
-
-
-Используем несколько полезных приближений, которые помогут оценить квантовый коэффициент ошибок по битам (QBER) и скорости формирования просеянного ключа. Для начала положим, что число взаимодействующих мод велико ($S\rightarrow \infty$), что действительно так для стандартных волоконно-оптических модуляторов. Тогда можно использовать приближение d-функций следующим образом:
-
-\begin{align}
-d_{nk}^S(\beta) &\xrightarrow{S\rightarrow \infty} J_{n-k}(m), \label{limdj} \\
-\beta &\propto m, \label{propto}
-\end{align}
-где $J_k(m)$ функция Бесселя первого порядка. Полагая значение $m$ малым, что действительно так, в соотвествии с теорией классической модуляции воспользуемся приближением первого порядка функции Бесселя. 
-
-
-Так в соответствии с уравнение \ref{betam} $\beta \rightarrow 0$, следовательно можно использовать аппроксимации первого порядка для выражения \ref{betaappox} в терминах $m$ подразумевая пропорциональность в уравнении \ref{propto}.
-
-
-Определим уравнение~\ref{pdet} следующим образом:
-
-\begin{align}\label{pdet1}
- \mathcal{P}_{1,2}^{+}(\Delta\varphi)&=\mu\eta\Big(1\pm\cos(\Delta\varphi)\cos(\varphi_0)\Big)+ \nonumber
- \\
- &+\vartheta\Big(\mu_c\eta(1\pm\cos(\varphi_0))\Big)+p_{dark},
-\end{align}
-
-
-где $\eta$ полная оптическая пропускная способность квантового канала с учетом квантовой эффективности детектора, $p_{dark}=\gamma_{dark}\Delta t$ это вероятность темнового срабатывания во временном интервале $\Delta t$, и $\mu$ и $\mu_c$ это среднее число фотонов на боковых и на центральной моде соотвественно после модуляции, как определено:
-
-\begin{align}
-    \mu&=\mu_0\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2, \\
-    \mu_c&=\mu_0-\mu=\mu_0(1-\sum_{k\neq 0}|d_{0k}^{S}(\beta)|^2).
-\end{align}
-Выраение в уравнени~\ref{pdet1} даёт точное соотношение между экспериментальными параметрами и показывает, как они влияют на вероятности детектирования квантовых состояний. 
-
-
-\pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Зависимость интенсивности на боковых частотах от сдвига фаз в результате интерференции в режиме счета фотонов} \label{ch:ch5/sec7}
-
-
-
- \begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.2]{ExperimentTF.png}
-  \caption{Зависимость количества отсчетов в результате интерференции от разности фаз модулирующих сигналов}
-  \label{fig:Experimental_TF}
+\begin{figure}
+	\includegraphics[width=1\linewidth]{TFQKD.png}
+	\caption{ Simulation of our TF QKD protocol based on multi-mode phase-coded weak coherent states. For the considered simulation parameters, the key rate of proposed TF QKD exceeds the linear key rate bound by Pirandola et al. (PLOB bound) \cite{pirandola2017fundamental} when $\eta_c \gtrsim$ 40 dB (200 km). In addition, our protocol is also able to achieve a long transmission distance of $\eta_c\approx$ 83 dB (460 km). %Parameters were estimated as follows: $\mu=0.2$, $\mu_0=4$, $F=100$ MHz, $\gamma_{dark}=1.5$ kHz, $\vartheta=10^{-2.5}$, $\varphi_0\approx0$, $\eta=10^{-1.65}$, $\varphi_m\approx3^{\circ}$.} 
+	}
+	\label{fig:fig2}
 \end{figure}
-
-
-\pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Оценка коэффициента битовых ошибок и скорости формирования ключа} \label{ch:ch5/sect8}
-
-Далее рассмотрим только те случаи, где срабатывание происходит только на одном из детекторов в единицу времени.  Таким образом, вероятности срабатываний $R$ определяются как:
-
-\begin{align}
-    R&=\Big(\mathcal{P}_{1}^{+}\mathcal{P}_{2}^{-}(\Delta\varphi=\varphi_m)+\mathcal{P}_{1}^{-}\mathcal{P}_{2}^{+}(\Delta\varphi=\pi+\varphi_m)+ \nonumber \\
-    &+\mathcal{P}_{1}^{+}\mathcal{P}_{2}^{-}(\Delta\varphi=\pi+\varphi_m)+\mathcal{P}_{1}^{-}\mathcal{P}_{2}^{+}(\Delta\varphi=\varphi_m)\Big),
-\end{align}
-
-
-где $\varphi_m$ средняя величина несоответствия фаз $\varphi_A$ и $\varphi_B$. Первые два слагаемых - это вероятности успешного определения битов легитимными пользователями, тогда как оставшиеся два слагаемых - вероятности смены бита на противоположный (bitflip) (полагая $\varphi_0 \approx 0$). Таким образом, можно определить выражение для QBER $Q$ следующим образом:
-
-\begin{align}
-    Q=\frac{\mathcal{P}_{1}^{-}\mathcal{P}_{2}^{+}(\Delta\varphi=\varphi_m)+\mathcal{P}_{1}^{+}\mathcal{P}_{2}^{-}(\Delta\varphi=\pi+\varphi_m)}{R}.
-\end{align}
 
 
 Наконец, можно определить выражение для оценки среднего значения скорости формирования просеянного ключа $K$ (одинаковые биты между легитимными пользователями, но коррелирующие с возможным результатом у злоумышленника, что требует проведения процедуры усиления секретности)
@@ -215,10 +106,10 @@ d_{nk}^S(\beta) &\xrightarrow{S\rightarrow \infty} J_{n-k}(m), \label{limdj} \\
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Выводы по главе} \label{ch:ch5/sec9}
+\section{Выводы по главе} \label{ch:ch6/sec9}
 
 
-В \ref{ch:ch5} главе показано, что в результате интерференции квантового фазомодулированного сигнала на боковых частотах на симметричном светоделителе в схеме квантовой рассылки ключа с узлом регистрации, независящим от легитимного пользователя, происходит спектральное разделение квантового сигнала и сигнала на центральной длине волны с их независимой регистрацией в разных плечах светоделителя. 
+В \ref{ch:ch6/sec2}  
 
 \pagebreak
 
