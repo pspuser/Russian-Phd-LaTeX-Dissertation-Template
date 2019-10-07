@@ -1,38 +1,65 @@
-\chapter{Экспериментальное исследование параметров устройства квантовой коммуникации с недоверенным приемным узлом} \label{ch:ch6}
-\section{Интерференция сигналов на боковых частотах фазомодулированного излучения} \label{sec:ch6/sec1}
+\chapter{Анализ секретности системы квантовой коммуникации с недоверенным приемным узлом} \label{ch:ch6}
+\section{Исследование возможностей злоумышленника по получению информации о квантовом состоянии при разделении многофотонных состояний} \label{sec:ch6/sec1}
 
-Для проверки концепции была собрана оптическая схема, представленная на рисунке \ref{fig:RF_sin}. Для простоты использовался только один источник излучения, сигнал на выходе которого делился светоделителем 50:50 $СД1$. Такой подход позволяет имитировать случай, когда у Алисы и Боба хорошо скоррелированные источники излучения. В данном эксперименте применялся лазер с распределенной обратной связью Л1 (TTX1994 Neophotonics), отличительными особенностями которого являются очень узкая ширина спектральной линии порядка 100~кГц и широкий диапазон перестройки длин волн (от 1530~нм до 1565,5~нм) с высокой степенью точности (20~пм). Выходная мощность при этом составляла 10~мВт. Однако, это значение зависит от глубины динамического диапазона перестраиваемого оптического аттенюатора ПОА и суммарных потерь, вносимых элементами Алисы или Боба, так как результирующая мощность сигнала на боковых частотах должна не превышать величину 2,56~пВт, соответствующую среднему числу фотонов в импульсе 0,2 при частоте смены состояний 100~Мгц.   
-
-Из-за чувствительности резнатора внутри лазера с распределенной обратной связью к обратному относительно выходного оптическому излучению, то есть переотражениям и рассеиванию сигналов, в оптической схеме применяется волоконный изолятор И на основе эффекта Фарадея с величиной изоляции порядка 50~дБ. Для перевода системы в однофотонный режим применяется ПОА с достаточной малым шагом перестройки 0,05 дБ и большим динамическим диапазоном величиной 60~дБ.  
-
- \begin{figure}[ht]
-  \centering
-  \includegraphics[scale=0.5]{Scheme_colored_rus.png}
-  \caption{Принципиальная схема экспериментального стенда}
-  \label{fig:RF_sin}
-\end{figure}
-
-На выходе из источника сигнал проходил по двум плечам формируемого таким образом интерферометра через светоделитель, благодаря чему имитировалось, что Алиса и Боб - это раздельные узлы, в которых информация кодировалась с помощью фазовых модуляторов. Выходы первого светоделителя подключались ко входам двух независимых 10~ГГц электро-оптических модуляторов на основе $LiNbO_3$ (со встроенным поляризатором) $ФМ1$ and $ФМ2$. Поляризаторы снижали чувствительность модуляторов к поляризации входного излучения, для чего использовался контроллер поляризации КП, и таким образом, повышалась видность картины интерференции. Электрические входы $ФМ1$ и $ФМ1$ подключались к выходам с цифро-аналоговых преобразователей ЦАП с модулирующим радиочастотным синусоидальным сигналом (с частотой 4,8~ГГц). Амплитуды управляющих сигналов подбирались таким образом, чтобы мощность сигнала на боковых частотах была равно у Алисы и у Боба. 
-
-% and provide 0.2 photons intensity of sidebands.
-
-Индекс модуляции, который показывает долю энергии на боковых частотах по отношению к центральной в результате модуляции должен быть 5~\%. В таком случае наблюдается оптимальное соотношение сигнала на боковых частотах к шуму проходящей через оптический фильтр центральной частоты.  Так что средняя величина оптической мощности была равна 2.56~пВт, что соответствует $\mu=0.2$.  
-
-
-В данном исследовании  использовались только два кодирующих фазовых состояния на Алисе и Бобе ($\varphi_{A,B}\in\{0,\pi\}$. Разница фаз ($\Delta\varphi$) между Алисой и Бобом формировалась с помощью изменения IQ-таблиц ЦАП при помощь ПЛИС и ПО сосбтвенной разработки. В случае измерения зависимости количества срабатываний детекторов от разности фаз ($\Delta\varphi$) фаза сдвигалась последовательно с шагом $\varphi_{step}\ = 10^{\circ}$. Наблюдаемые состояния на выходах $ФМ1$ и $ФМ2$ могут быть описаны в соотвествии с уравнением~\ref{phi}.
-
-После того, как состояния приготовлены, мы посылаем их в квантовый канал. Для компенсации оптической разности хода в двух плечах интерферометра, а так же для точной подстройки оптических фаз сигналов использовались $ФМ3$ и $ФМ4$. Эта подстройка осуществлялась при помощи изменения постоянного напряжения, подаваемого на модуляторы и формируемого двумя независимыми электрическими выходами генератора сигналов $GEN1$ и $GEN2$. Выходы втрой пары фазовых модуляторов подключались к паре входных портов светоделителя $СД2$ 2x2 с коэффициентом деления 50:50.
-
-Измерения проводились в два этапа: первый этап в классическом свете, второй этап - в режиме счета фотонов на сверхпроводниковом детекторе одиночных фотонов (Сконтел), у которого встроены два независимых приёмника $Д1$, $Д4$. Квантовая эффективность обоих была равна 10~\%, а уровень темновых шумов не превышал 50~Гц для каждого. Измеренная величина суммарных шумов, включающих в себя темновые срабатывания и засветку от центральной частоты в силу ограниченной экстинкции оптического фильтра, составляла $\gamma_{темн}=1.5$ кГц.
-
-Фотография экспериментального стенда представлена на рисунке \ref{fig:experimental_setup_TF}.  
-
- \begin{figure}[ht]
-  \centering
-	 \includegraphics[scale=0.7]{Experimental_setup_TF}
-  \caption{Фотография экспериментального стенда}
-  \label{fig:experimental_setup_TF}
-\end{figure}
+Let us consider weak coherent state $|\alpha e^{i \varphi}\rangle$, where $\alpha$ is the amplitude of the states and  $\varphi$ is the phase, which encoded the bit. Probability of obtaining an anticipated measurement result indicating the presence of $n$ photons in a given sample or pulse can be obtained by considering the trace of the product of the density matrix of the coherent state $\rho$ and the projector on the Fock basis $|n\rangle\langle n|$: 
+%
+\begin{align}
+    P_n&=\text{Tr}(\rho |n\rangle\langle n|) = \text{Tr}(|\alpha e^{i \varphi}\rangle \langle\alpha e^{i \varphi} |n\rangle\langle n|) \nonumber \\
+    &= \text{Tr}(\sum_{k=0}^{\infty}\sum_{m=0}^{\infty} e^{-|\alpha|^2} \frac{(\alpha e^{i \varphi})^k(\alpha^{*} e^{-i \varphi})^m}{\sqrt{k!m!}} |k\rangle\langle m |n\rangle\langle n|) \nonumber  \\
+    &=\sum_{j=0}^{\infty}\sum_{k=0}^{\infty}\sum_{m=0}^{\infty} e^{-|\alpha|^2} \frac{(\alpha e^{i \varphi})^k(\alpha^{*} e^{-i \varphi})^m}{\sqrt{k!m!}}\langle j |k\rangle\langle m |n\rangle\langle n|j\rangle \nonumber  \\
+    &=e^{-|\alpha|^2} \frac{(|\alpha|^{2n})}{n!}, \label{pnver}
+\end{align}
+% 
+where we used the orthogonality property of Fock basis vectors, $\langle k| n \rangle = \delta_{kn}$, where $\delta_{kn}$ is delta Kronecker symbol. Thus we can present the weak coherent state in Fock Basis as:
+%
+\begin{equation}
+    |\alpha e^{i \varphi}\rangle = e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^{\infty}  \frac{(\alpha e^{i \varphi})^n}{\sqrt{n!}} |n\rangle.
+\end{equation}
+%
+Therefore, the state after measurement will be reduced as follows:
+%
+\begin{equation}
+    \Tilde{\rho}=\frac{\sqrt{|n\rangle\langle n|} |\alpha e^{i \varphi}\rangle \langle\alpha e^{i \varphi} | \sqrt{|n\rangle\langle n|}}{P_n}.
+\end{equation}
+%
+Lets investigate how operator $\sqrt{|n\rangle\langle n|}$ acts on vectors in the Fock basis $|m\rangle$ presenting it as a taylor series. Lets consider two different cases:
+%
+\begin{enumerate}
+    \item $m \neq n$
+    \begin{align}
+        \sqrt{|n\rangle\langle n|}|m\rangle = \sum_{k=0}^{\infty} \frac{(-1)^k(2k)!}{(1-2k)(k!)^2 4^k}(|n\rangle\langle n|-\hat{I})^k|m\rangle ,
+    \end{align}
+    where $\hat{I}$ is identity operator. Using the following properties
+    \begin{gather}
+        \hat{I}|m\rangle=|m\rangle, \\
+        (|n\rangle\langle n|)^k |m\rangle = (|n\rangle\langle n|)^{k-1} |n\rangle\langle n|m\rangle = 0,
+    \end{gather}
+    we obtain
+    \begin{align}
+       \sqrt{|n\rangle\langle n|}|m\rangle = \sum_{k=0}^{\infty} \frac{(-1)^k(2k)!}{(1-2k)(k!)^2 4^k}(-1)^k|m\rangle = 0 |m\rangle.
+    \end{align}
+    \item $m=n$
+    
+    Then using the next properties
+    \begin{align}
+        (|n\rangle\langle n|)^k |n\rangle = (|n\rangle\langle n|)^{k-1}=\nonumber\\ =|n\rangle\langle n|n\rangle = (|n\rangle\langle n|)^{k-1} |n\rangle = ... = |n\rangle,
+    \end{align}
+    then
+    \begin{align}
+        \sqrt{|n\rangle\langle n|}|n\rangle &= \sum_{k=0}^{\infty} \frac{(-1)^k(2k)!}{(1-2k)(k!)^2 4^k}(|n\rangle\langle n|-\hat{I})^k|n\rangle \nonumber\\
+        &=|n\rangle + \sum_{k=1}^{\infty} \frac{(-1)^k(2k)!}{(1-2k)(k!)^2 4^k}(|n\rangle\langle n|-\hat{I})^k|n\rangle \nonumber\\
+        &=|n\rangle + 0 = |n\rangle.
+    \end{align}
+\end{enumerate}
+%
+Thus the reduced state has the next form:
+%
+\begin{align}
+   \Tilde{\rho}&=\frac{1}{P_n}\sum_{k=0}^{\infty}\sum_{m=0}^{\infty} e^{-|\alpha|^2} \frac{(\alpha e^{i \varphi})^k(\alpha^{*} e^{-i \varphi})^m}{\sqrt{k!m!}} \sqrt{|n\rangle\langle n|}|k\rangle\langle m |\sqrt{|n\rangle\langle n|} \nonumber \\
+   &= \frac{1}{P_n} P_n |n\rangle\langle n| = |n\rangle\langle n|. \label{rhored}
+\end{align}
+%
+Thereby according to the equations obtained in eq.~\ref{pnver} and eq.~\ref{rhored} the measurement results  of the number of photons in the pulse (projection on the Fock basis) in weak coherent states and the reduced state after the measurement do not contain information about the phase of the coherent state $\varphi$. In the multimode case, the problem reduces to the single mode case considered above.
 
 \pagebreak
 
