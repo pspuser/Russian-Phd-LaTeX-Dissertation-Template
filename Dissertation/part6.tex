@@ -1,7 +1,7 @@
 \chapter{Анализ секретности системы квантовой коммуникации с недоверенным приемным узлом} \label{ch:ch6}
 \section{Исследование возможностей злоумышленника по получению информации о квантовом состоянии при разделении многофотонных состояний} \label{sec:ch6/sec1}
 
-Let us consider weak coherent state $|\alpha e^{i \varphi}\rangle$, where $\alpha$ is the amplitude of the states and  $\varphi$ is the phase, which encoded the bit. Probability of obtaining an anticipated measurement result indicating the presence of $n$ photons in a given sample or pulse can be obtained by considering the trace of the product of the density matrix of the coherent state $\rho$ and the projector on the Fock basis $|n\rangle\langle n|$: 
+Пусть $|\alpha e^{i \varphi}\rangle$ - слабое когерентное состояниие, где $\alpha$ - это амплитуда состояния, а $\varphi$ - фаза, с помощью которой кодируется бит. Вероятность наблюдения ожидаемого результата измерения, говорящего о наличии $n$ фотонов в данном примере или импульсе, может быть получена с учетом следа продукта матрицы плотности когерентного состояния $\rho$ и проектора на Фоковский базис $|n\rangle\langle n|$: 
 %
 \begin{align}
     P_n&=\text{Tr}(\rho |n\rangle\langle n|) = \text{Tr}(|\alpha e^{i \varphi}\rangle \langle\alpha e^{i \varphi} |n\rangle\langle n|) \nonumber \\
@@ -10,19 +10,19 @@ Let us consider weak coherent state $|\alpha e^{i \varphi}\rangle$, where $\alph
     &=e^{-|\alpha|^2} \frac{(|\alpha|^{2n})}{n!}, \label{pnver}
 \end{align}
 % 
-where we used the orthogonality property of Fock basis vectors, $\langle k| n \rangle = \delta_{kn}$, where $\delta_{kn}$ is delta Kronecker symbol. Thus we can present the weak coherent state in Fock Basis as:
+где мы используем свойство ортогональности векторов Фоковского базиса, $\langle k| n \rangle = \delta_{kn}$, где $\delta_{kn}$ - дельта-символ Кронекера. Таким образом, мы можем представить слабое когерентное состояние в Фоковском базисе, как:
 %
 \begin{equation}
     |\alpha e^{i \varphi}\rangle = e^{-\frac{|\alpha|^2}{2}}\sum_{n=0}^{\infty}  \frac{(\alpha e^{i \varphi})^n}{\sqrt{n!}} |n\rangle.
 \end{equation}
 %
-Therefore, the state after measurement will be reduced as follows:
+Следовательно, состояние после измерения может быть сокращено следующим образом:
 %
 \begin{equation}
     \Tilde{\rho}=\frac{\sqrt{|n\rangle\langle n|} |\alpha e^{i \varphi}\rangle \langle\alpha e^{i \varphi} | \sqrt{|n\rangle\langle n|}}{P_n}.
 \end{equation}
 %
-Lets investigate how operator $\sqrt{|n\rangle\langle n|}$ acts on vectors in the Fock basis $|m\rangle$ presenting it as a taylor series. Lets consider two different cases:
+Исследуем, как оператор $\sqrt{|n\rangle\langle n|}$ воздействует на вектор в Фоковском базисе $|m\rangle$, представляя его в виде ряда Тейлора. Рассмортим два различных случая:
 %
 \begin{enumerate}
     \item $m \neq n$
