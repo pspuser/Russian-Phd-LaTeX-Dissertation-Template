@@ -65,38 +65,40 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Оценка скорости формирования секретного ключа в асимптотическом приближении} \label{ch:ch6/sec2}
 
-Finally one may derive expression that estimates average sifted key rates $C$ (identical bits but correlated with Eve hence privacy amplification is necessary)
+Определим выражение для оценки средней скорости формирования просеянных ключей $C$ (идентичных битов у отправителя и получателя, но скоррелированных со злоумышленником, в связи с чем, требуется процедура усиления секретности) 
 \begin{equation}
     C=FR(1-h(Q)),
 \end{equation}
-where $h(Q)$ is binary entropy function.
+где $h(Q)$ - функция двоичной энтропии.
 
-To provide asymptotic key rates we use well-known method introduced by Devetak-Winter \cite{devetak2005distillation}.
+Чтобы оценить скорость формирования ключа мы используем общеизвестный метод, предложенный в \cite{devetak2005distillation}.
 
-We have estimated Holevo information for multi-mode coherent states presented in Eq.~\ref{phi} according to \cite{kozubov2019finite}:
+Оценка границы Холево для многомодовых когерентных состояний дана в \ref{phi} в соответствии с \cite{kozubov2019finite}:
 \begin{equation}
     \chi=h\left(\frac{1-e^{-\mu_0(1-d^S_{00}(2\beta))}}{2}\right)\approx h\left(\frac{1-e^{-2\mu}}{2}\right).
 \end{equation}
-It shows us the maximal amount of information Eve may obtain from the states in one channel. However TF QKD schemes have two independent channels. Hence Eve can perform independent measurements in two quantum channels and obtain the following amount of information:
+
+Она показывает максимальное количество информации, которую Ева может получить из состояний в одном канале. Однако, в схеме с недоверенным узлом используются два независимых канала. Следовательно, злоумышленник может осуществлять независимые измерения в двух квантовых каналах и получать следующее количество информации:
 \begin{equation}
     \tilde{\chi}=2(1-\chi)\chi+\chi^2.
 \end{equation}
-Thus asymptotic secure key rates $K$ is as follows:
+Thus asymptotic secure key rates $K$ будет следующим:
 \begin{equation}
      K=FR(1-\xi h(Q)-\tilde{\chi}),
 \end{equation}
-where $\xi$ is the error correction efficiency. 
-For calculations we use experimental parameters from one of the regimes used in Ref.~\cite{Gleim16,Miroshnichenko18}, which are close the implemented during experimental verification of our model: $F=100$ MHz, $\mu=0.1$, $\mu_0=4$, $\Delta\varphi=5^{\circ}$, $\vartheta=10^{-3}$, $\xi=1.15$, $\varphi_0=5^{\circ}$ $\eta_D=0.25$, $\gamma_{dark}= 10$ Hz. The simulation results are shown in Fig.~\ref{fig:fig2}.
+где $\xi$ - эффектвность процедуры исправления ошибок. 
+
+Для расчетов возьмем экспериментальные параметры одного из режимов, использованных в \cite{Gleim16,Miroshnichenko18}, которые близки к экспериментальной реализации нашей модели: $F=100$ МГц, $\mu=0.1$, $\mu_0=4$, $\Delta\varphi=5^{\circ}$, $\vartheta=10^{-3}$, $\xi=1.15$, $\varphi_0=5^{\circ}$ $\eta_D=0.25$, $\gamma_{dark}= 10$ Гц. Расчетные результаты показаны на рисунке \ref{fig:fig2}.
 
 \begin{figure}
 	\includegraphics[width=1\linewidth]{TFQKD.png}
-	\caption{ Simulation of our TF QKD protocol based on multi-mode phase-coded weak coherent states. For the considered simulation parameters, the key rate of proposed TF QKD exceeds the linear key rate bound by Pirandola et al. (PLOB bound) \cite{pirandola2017fundamental} when $\eta_c \gtrsim$ 40 dB (200 km). In addition, our protocol is also able to achieve a long transmission distance of $\eta_c\approx$ 83 dB (460 km). %Parameters were estimated as follows: $\mu=0.2$, $\mu_0=4$, $F=100$ MHz, $\gamma_{dark}=1.5$ kHz, $\vartheta=10^{-2.5}$, $\varphi_0\approx0$, $\eta=10^{-1.65}$, $\varphi_m\approx3^{\circ}$.} 
-	}
+	\caption{Расчет параметров системы квантовой коммуникации на боковых частотах модулированного излучения с недоверенным узлом. Для предполагаемых значений скорость формирования ключа превышает линейный предел скорости \cite{pirandola2017fundamental} где $\eta_c \gtrsim$ 40 дБ (200 км). Вдобавок, предлагаемый в работе протокол также способен достичь длины линии передачи $\eta_c\approx$ 83 дБ (460 км). 
 	\label{fig:fig2}
 \end{figure}
 
 
 Наконец, можно определить выражение для оценки среднего значения скорости формирования просеянного ключа $K$ (одинаковые биты между легитимными пользователями, но коррелирующие с возможным результатом у злоумышленника, что требует проведения процедуры усиления секретности)
+
 \begin{equation}
     K=FR(1-h(Q)),
 \end{equation}
