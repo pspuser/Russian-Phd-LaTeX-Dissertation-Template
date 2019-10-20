@@ -48,18 +48,21 @@
     \begin{align}
         \sqrt{|n\rangle\langle n|}|n\rangle &= \sum_{k=0}^{\infty} \frac{(-1)^k(2k)!}{(1-2k)(k!)^2 4^k}(|n\rangle\langle n|-\hat{I})^k|n\rangle \nonumber\\
         &=|n\rangle + \sum_{k=1}^{\infty} \frac{(-1)^k(2k)!}{(1-2k)(k!)^2 4^k}(|n\rangle\langle n|-\hat{I})^k|n\rangle \nonumber\\
-        &=|n\rangle + 0 = |n\rangle.
+        &=|n\rangle + 0 = |n\rangle
     \end{align}
 \end{enumerate}
-%
+
 Таким образом, в сокращенном виде:
-%
-\begin{align}
-   \Tilde{\rho}&=\frac{1}{P_n}\sum_{k=0}^{\infty}\sum_{m=0}^{\infty} e^{-|\alpha|^2} \frac{(\alpha e^{i \varphi})^k(\alpha^{*} e^{-i \varphi})^m}{\sqrt{k!m!}} \sqrt{|n\rangle\langle n|}|k\rangle\langle m |\sqrt{|n\rangle\langle n|} \nonumber \\
-   &= \frac{1}{P_n} P_n |n\rangle\langle n| = |n\rangle\langle n|. \label{rhored}
-\end{align}
-%
-Тем самым, в соответствии с выражениями, полученными в~\ref{pnver} и \ref{rhored} результат измерения числа фотонов в импульсе (проекция на Фоковский базис) в слабом когерентном импульсе и сокращенное состояние после измерения не содержат информации о фазе когерентного состояния $\varphi$. В случае с множеством мод, проблема сводится к случаю с одной модой, описанному выше.
+
+\begin{equation}
+	\begin{aligned}
+   		\Tilde{\rho}&=\frac{1}{P_n}\sum_{k=0}^{\infty}\sum_{m=0}^{\infty} e^{-|\alpha|^2} \frac{(\alpha e^{i \varphi})^k(\alpha^{*} e^{-i \varphi})^m}{\sqrt{k!m!}} \sqrt{|n\rangle\langle n|}|k\rangle\langle m |\sqrt{|n\rangle\langle n|} \nonumber \\
+  			 &= \frac{1}{P_n} P_n |n\rangle\langle n| = |n\rangle\langle n|	
+  	 \label{rhored}
+	\end{aligned}
+\end{equation}
+
+Тем самым, в соответствии с выражениями, полученными в \ref{pnver} и \ref{rhored} результат измерения числа фотонов в импульсе (проекция на Фоковский базис) в слабом когерентном импульсе и сокращенное состояние после измерения не содержат информации о фазе когерентного состояния $\varphi$. В случае с множеством мод, проблема сводится к случаю с одной модой, описанному выше.
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -82,17 +85,18 @@
 \begin{equation}
     \tilde{\chi}=2(1-\chi)\chi+\chi^2.
 \end{equation}
+
 Thus asymptotic secure key rates $K$ будет следующим:
 \begin{equation}
      K=FR(1-\xi h(Q)-\tilde{\chi}),
 \end{equation}
-где $\xi$ - эффектвность процедуры исправления ошибок. 
+где $\xi$ - эффективность процедуры исправления ошибок. 
 
 Для расчетов возьмем экспериментальные параметры одного из режимов, использованных в \cite{Gleim16,Miroshnichenko18}, которые близки к экспериментальной реализации нашей модели: $F=100$ МГц, $\mu=0.1$, $\mu_0=4$, $\Delta\varphi=5^{\circ}$, $\vartheta=10^{-3}$, $\xi=1.15$, $\varphi_0=5^{\circ}$ $\eta_D=0.25$, $\gamma_{dark}= 10$ Гц. Расчетные результаты показаны на рисунке \ref{fig:fig2}.
 
 \begin{figure}
 	\includegraphics[width=1\linewidth]{TFQKD.png}
-	\caption{Расчет параметров системы квантовой коммуникации на боковых частотах модулированного излучения с недоверенным узлом. Для предполагаемых значений скорость формирования ключа превышает линейный предел скорости \cite{pirandola2017fundamental} где $\eta_c \gtrsim$ 40 дБ (200 км). Вдобавок, предлагаемый в работе протокол также способен достичь длины линии передачи $\eta_c\approx$ 83 дБ (460 км). 
+	\caption{Расчет параметров системы квантовой коммуникации на боковых частотах модулированного излучения с недоверенным узлом. Для предполагаемых значений скорость формирования ключа превышает линейный предел скорости \cite{pirandola2017fundamental} где $\eta_c \gtrsim$ 40 дБ (200 км). Вдобавок, предлагаемый в работе протокол также способен достичь длины линии передачи $\eta_c\approx$ 83 дБ (460 км). }
 	\label{fig:fig2}
 \end{figure}
 
@@ -107,10 +111,8 @@ Thus asymptotic secure key rates $K$ будет следующим:
 \pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Выводы по главе} \label{ch:ch6/sec9}
+\section{Выводы по главе} \label{ch:ch6/sec3}
 
 
-В \ref{ch:ch6/sec2}  
 
-\pagebreak
 
