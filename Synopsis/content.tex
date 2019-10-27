@@ -1,18 +1,18 @@
 
 \section*{Общая характеристика работы}
 
-\newcommand{\actuality}{\underline{\textbf{\actualityTXT}}}
-\newcommand{\progress}{\underline{\textbf{\progressTXT}}}
-\newcommand{\aim}{\underline{{\textbf\aimTXT}}}
-\newcommand{\tasks}{\underline{\textbf{\tasksTXT}}}
-\newcommand{\novelty}{\underline{\textbf{\noveltyTXT}}}
-\newcommand{\influence}{\underline{\textbf{\influenceTXT}}}
-\newcommand{\methods}{\underline{\textbf{\methodsTXT}}}
-\newcommand{\defpositions}{\underline{\textbf{\defpositionsTXT}}}
-\newcommand{\reliability}{\underline{\textbf{\reliabilityTXT}}}
-\newcommand{\probation}{\underline{\textbf{\probationTXT}}}
-\newcommand{\contribution}{\underline{\textbf{\contributionTXT}}}
-\newcommand{\publications}{\underline{\textbf{\publicationsTXT}}}
+	\newcommand{\actuality}{\underline{\textbf{\actualityTXT}}}
+	\newcommand{\progress}{\underline{\textbf{\progressTXT}}}
+	\newcommand{\aim}{\underline{{\textbf\aimTXT}}}
+	\newcommand{\tasks}{\underline{\textbf{\tasksTXT}}}
+	\newcommand{\novelty}{\underline{\textbf{\noveltyTXT}}}
+	\newcommand{\influence}{\underline{\textbf{\influenceTXT}}}
+	\newcommand{\methods}{\underline{\textbf{\methodsTXT}}}
+	\newcommand{\defpositions}{\underline{\textbf{\defpositionsTXT}}}
+	\newcommand{\reliability}{\underline{\textbf{\reliabilityTXT}}}
+	\newcommand{\probation}{\underline{\textbf{\probationTXT}}}
+	\newcommand{\contribution}{\underline{\textbf{\contributionTXT}}}
+	\newcommand{\publications}{\underline{\textbf{\publicationsTXT}}}
 
 \input{common/characteristic} % Характеристика работы по структуре во введении и в автореферате не отличается (ГОСТ Р 7.0.11, пункты 5.3.1 и 9.2.1), потому её загружаем из одного и того же внешнего файла, предварительно задав форму выделения некоторым параметрам
 
@@ -187,7 +187,7 @@
   
   Для проверки концепции была собрана оптическая схема, представленная на рисунке \ref{fig:RF_sin}. Для простоты использовался только один источник излучения, сигнал на выходе которого делился светоделителем 50:50 $BS1$. Такой подход позволяет имитировать случай, когда у Алисы и Боба хорошо скоррелированные источники излучения. В данном эксперименте применялся лазер с распределенной обратной связью Л1 (TTX1994 Neophotonics), отличительными особенностями которого являются очень узкая ширина спектральной линии порядка 100~кГц и широкий диапазон перестройки длин волн (от 1530~нм до 1565,5~нм) с высокой степенью точности (20~пм). Выходная мощность при этом составляла 10~мВт. Однако, это значение зависит от глубины динамического диапазона перестраиваемого оптического аттенюатора ПОА и суммарных потерь, вносимых элементами Алисы или Боба, так как результирующая мощность сигнала на боковых частотах должна не превышать величину 2,56~пВт, соответствующую среднему числу фотонов в импульсе 0,2 при частоте смены состояний 100~Мгц.   
 
-Из-за чувствительности резнатора внутри лазера с распределенной обратной связью к обратному относительно выходного оптическому излучению, то есть переотражениям и рассеиванию сигналов, в оптической схеме применяется волоконный изолятор И на основе эффекта Фарадея с величиной изоляции порядка 50~дБ. Для перевода системы в однофотонный режим применяется ПОА с достаточной малым шагом перестройки 0,05 дБ и большим динамическим диапазоном величиной 60~дБ.  
+Из-за чувствительности резонатора внутри лазера с распределенной обратной связью к обратному относительно выходного оптическому излучению, то есть переотражениям и рассеиванию сигналов, в оптической схеме применяется волоконный изолятор И на основе эффекта Фарадея с величиной изоляции порядка 50~дБ. Для перевода системы в однофотонный режим применяется ПОА с достаточной малым шагом перестройки 0,05 дБ и большим динамическим диапазоном величиной 60~дБ.  
 
   
 
@@ -219,7 +219,9 @@
  \underline{\textbf{Заключение}} содержит список основных результатов, полученных в работе. 
 
 % !_____!
-%  \input{common/concl}
+  \input{common/concl}
+
+%	\newcommand{\publications}{\underline{\textbf{\publicationsTXT}}}
 
 %При использовании пакета \verb!biblatex! список публикаций автора по теме
 %диссертации формируется в разделе <<\publications>>\ файла

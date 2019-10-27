@@ -50,8 +50,12 @@
 \input{common/renames}                 % Переопределение именований
 
 %%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
-\include{Dissertation/title}           % Титульный лист
+%	\include{Dissertation/title}           % Титульный лист убран
+\setcounter{page}{5}					%Нумерация с 5-ой страницы
 \include{Dissertation/contents}        % Оглавление
+\include{Synopsis/content}			%Реферат на русском языке
+%	\include{Synopsis/content.tex}			%Реферат на английском языке
+
 \include{Dissertation/introduction}    % Введение
 \include{Dissertation/part1}           % Глава 1
 \include{Dissertation/part2}           % Глава 2
