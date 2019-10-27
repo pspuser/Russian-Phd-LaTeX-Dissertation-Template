@@ -1,18 +1,17 @@
 
   {\relevance} 
-  Quantum informatics is a field of knowledge that combines elements of the photonics and the theory of information. Quantum bits, or qubits, are used as the basic units of quantum information science. Qubit is a system that can be in a superposition state and used to store, calculate and transmit information. One of the promising areas are a quantum calculations and a quantum memory -- the main components of a quantum computer -- a totally new type of computing device that works on the fundamental principles of quantum mechanics. The transmission of a quantum state at various distances, or quantum teleportation, is another promising application of quantum informatics. The generation of a symmetric bit sequence by the quantum methods, or quantum key distribution (QKD), was formed as a scientific direction in the 80's of the 20th century. This direction is advanced in terms of application. In quantum communication systems (QCS), through the use of quantum states, two or more legitimate users can distribute symmetric bit sequences, which can subsequently be used as keys for encoding information, so that any eavesdropping attempts of the communication channel will be detected by the increased error rate.
+  Quantum informatics is a field of knowledge that combines elements of the photonics and the theory of information. Quantum bits, or qubits, are used as the basic units of quantum information science. Qubit is a system that can be in a superposition state and used to store, calculate and transmit information. One of the promising areas of quantum informatics are a quantum calculations and a quantum memory -- the main components of a quantum computer -- a totally new type of computing device that works on the fundamental principles of quantum mechanics. The transmission of a quantum state at various distances, or quantum teleportation, is another promising application of quantum informatics. The generation of a symmetric bit sequence by the quantum methods, or quantum key distribution (QKD), was formed as a scientific direction in the 80's of the 20th century. This direction is advanced in terms of application. In quantum communication systems (QCS), through the use of quantum states, two or more legitimate users can distribute symmetric bit sequences, which can subsequently be used as keys for encoding information, so that any eavesdropping attempts of the communication channel will be detected by the increased error rate.
   
 Differences between physical implementations of QCS from ideal models used in theoretical approaches can be the basis for conducting various types of attacks on equipment used in this systems. It was previously shown that gated single-photon detectors (SPD) of several commercially available QKD systems were vulnerable to attack by the eavesdropper. It is noteworthy that exposure can be carried out even by optical methods. Eavesdropping can be made directly from a quantum channel that connects legitimate users. In practice, optical fiber is most often used as a medium for the transferring of quantum states. Single photons and their properties are usually used for that purposes.
 	
-This type of attack is called a “faked-states attack”. It is based on the fact that for the detection of photons, a detector based on avalanche photodiodes (APDs) operating in the Geiger mode, or photon counting mode, is used. With this approach, in the absence of additional protective measures, the attacker has the ability to use the powerful constant optical radiation to carry the detector out from the Geiger mode to the linear mode and provoke triggering due to the use of powerful short pulses. Thus, the feasibility of complete control of the single-photon registration node, became critical for QKD protocols, and as a result, leads the eavesdropper to imperceptible obtaining of the full key correlating with that of legitimate users.
+This type of attack is called a <<faked-states attack>> (FSA). It is based on the fact that for the detection of photons, a detector based on avalanche photodiodes (APDs) operating in the Geiger mode, or photon counting mode, is used. With this approach, in the absence of additional protective measures, the attacker has the ability to use the powerful constant optical radiation to carry the detector out from the Geiger mode to the linear mode (so-called <<blinding>>) and provoke triggering due to the use of powerful short pulses. Thus, the feasibility of complete control of the single-photon registration node, became critical for QKD protocols, and as a result, leads the eavesdropper to imperceptible obtaining of the full key correlating with that of legitimate users.
 	
 
-There are several ways to counter this type of attack, but in practice most of them have not been tested in laboratories specializing in quantum hacking.  Several countermeasures that were analyzed and investigated have included counterattacks and hacking methods that were not taken into account by the developers of countermeasures.
+There are several ways to counter this type of attack, but in practice most of them have not been tested in quantum hacking laboratories. Several countermeasures that were analyzed and investigated have included counterattacks and hacking methods that were not taken into account by the developers of countermeasures.
 	
 The most effective countermeasure against the well-known types of attacks on detector side is the implementation of a  quite new QKD architecture that is resistant to attacks on measuring equipment (Measurement-Device-Independent, or MDI). With this approach, it is initially assumed that the single-photon registration unit is moved outside the sender and receiver blocks and is completely accessible to the eavesdropper. However, such an approach is characterized by a higher level of complexity of implementing the optical scheme and lower characteristics with respect to QKD systems with a point-to-point topology with a registration node in one of the blocks.
 	
-
-One of the promising approaches is the method of quantum communication at subcarrier-wave quantum key distribution (SCW-QKD). Its distinctive feature is the carrying of the quantum channel out to the sidebands generated as a result of modulation. This ensures high resistance to external factors and spectral efficiency, as well as good performance in the ratio of the key formation speed to the distance between the sender and receiver units. However, as part of this type of system for small and medium distances (up to 100 km), single-photon detectors based on the APD are also used, and the resistance to attacks on the measuring equipment of SCW-QKD systems has not been investigated.
+One of the promising approaches is the method of quantum communication at subcarrier-wave quantum key distribution (SCW~QKD). Its distinctive feature is the carrying of the quantum channel out to the sidebands generated as a result of modulation. This ensures high resistance to external factors and spectral efficiency, as well as good performance in the ratio of the key formation speed to the distance between the sender and receiver units. However, as part of this type of system for small and medium distances (up to 100~km), single-photon detectors based on the APD are also used, and the resistance to attacks on the measuring equipment of SCW~QKD systems has not been investigated.
 	
 	
 % Обзор, введение в тему, обозначение места данной работы в
@@ -68,23 +67,22 @@ One of the promising approaches is the method of quantum communication at subcar
 % темы. Нужен он отдельным структурынм элемементом или нет ---
 % смотрите другие диссертации вашего совета, скорее всего не нужен.
 
-{\aim} данной работы является исследование возможностей злоумышленника по получению секретного ключа с использованием атак на измерительное оборудование систем квантовой коммуникации на боковых частотах и разработка методов противодействия атакам.
+{\goal} of this dissertation is to investigate a feasibility of the secret key eavesdropping by detector side channel attacks of SCW~QKD systems and to develop countermeasure methods.
 
 
-Для~достижения поставленной цели необходимо было решить следующие {\tasks}:
+{\scientifictasks}:
 \begin{enumerate}
-  \item Исследование устойчивости детектора одиночных фотонов, применяемого в системах квантовой коммуникации на боковых частотах, к атакам с выведением из режима Гейгера (<<ослеплением>>). 
+  \item Investigate vulnerability of the SPD used in SCW~QKD to blinding.  
 
-  \item Оценка возможностей злоумышленника при атаке с выведением из режима Гейгера для систем квантовой коммуникации на боковых частотах. 
+  \item Estimate the eavesdropper limits in case of successfully controlling detector side. 
 
-  \item Разработка оптической схемы системы квантовой коммуникации, устойчивой к атакам на измерительное оборудование. 
+  \item Develop an optical scheme for monitoring possible eavesdropping.
 
-  \item Разработка протокола квантовой рассылки ключа, устойчивого к атаке на измерительное оборудование. 
-
+  \item Investigate a measurement-device independent QKD protocol based on multimode weak coherent states used in SCW~QKD. 
 \end{enumerate}
 
 
-{\novelty}
+{\scientificnovelty}
 \begin{enumerate}
   \item Впервые исследована устойчивость системы квантовой коммуникации на боковых частотах к атакам злоумышленника на измерительное оборудование приёмного блока. 
   \item Впервые предложена и применена контрмера против атаки злоумышленника с выведением детектора из режима Гейгера и навязыванием легитимным пользователям ключа. 
