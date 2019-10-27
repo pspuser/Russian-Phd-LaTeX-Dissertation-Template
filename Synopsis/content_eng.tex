@@ -40,13 +40,10 @@
 %\textbf{ХХХ}~страниц текста с~\textbf{ХХ}~рисунками и~5~таблицами. Список
 %литературы содержит \textbf{ХХX}~наименование.
 
- \section*{Содержание работы}
- Во \underline{\textbf{введении}} обосновывается актуальность
- исследований, проводимых в~рамках данной диссертационной работы,
-  формулируется цель, ставятся задачи работы, излагается научная новизна
- и практическая значимость представляемой работы. 
+ \section*{Main contents of work}
+ The \underline{\textbf{introduction}} substantiate the relevance of research carried out as part of this dissertation is substantiated, the goal is formulated, the tasks are set, the scientific novelty and practical significance of the work presented are stated.
 
- В \underline{\textbf{первой главе}}, имеющей обзорный характер, рассмотрены основные известные на данный момент способы регистрации одиночных фотонов для применения в системах квантовой коммуникации. Проведены анализ и сравнение сравнение различных типов детекторов фотонов, обоснован выбор исследуемого в работе детектора одиночных фотонов (ДОФ) на основе лавинного пробоя. Показаны возможные атаки потенциального злоумышленника на измерительное оборудование, а также приведены известные контрмеры против такого типа атак.
+ In \underline{\textbf{the first chapter}} with a review character, the main currently known methods for detecting single photons for use in quantum communication systems are considered. The analysis and comparison of various types of photon detectors are carried out, the choice of the single photon detector (SPD) studied in the work based on avalanche breakdown is justified. Possible attacks by a potential attacker on measuring equipment are shown, as well as known countermeasures against this type of attack.
 
 %  картинку можно добавить так:
 % \begin{figure}[ht]
@@ -62,55 +59,55 @@
 %   \lambda_{q_s} = K_x\frac{d{x}}{d{q_s}},
 % \]
 
- \underline{\textbf{Вторая глава}} посвящена исследованию детектора на основе лавинного пробоя в фотодиоде, который применяется в качестве измерительного оборудования для регистрации результата интерференции квантовых состояний в системе квантовой коммуникации на боковых частотах (ККБЧ) фазомодулированного излучения. Такой тип ДОФ обычно применяется для внутригородских дистанций до 100~км с потерями в линиях связи менее 15~дБ. 
+ \underline{\textbf{The second chapter}} is devoted to the study of a detector based on avalanche breakdown in a photodiode, which is used as measuring device for registering the result of interference of quantum states in a subcarrier-wave QKD system. This type of SPD is usually used for mid range distances of up to 100 ~ km with losses in communication lines less than 15~dB.
 
-Его отличительными особенностями являются:
+It's main advantages are following:
 \begin{enumerate}
-	\item Поддержка высокой частоты стробирующих импульсов - до 100~МГц
-	\item Возможность подачи стробирующих импульсов от внешнего устройства (External gating mode)
-	\item Широкий диапазон настройки ширины окна срабатывания (gate) - от 0,5~нс до 25~нс
-	\item Выставление задержки открытия окна срабатывания относительно стробирующего импульса (Trigger delay) в диапазоне до 10~нс с высоким разрешением во времени - 10~пс 
-	\item Возможность выставления <<мертвого времени>> в широком диапазоне - от 0,1~мкс до 100~мкс
-	\item Возможность регулировки квантовой эффективности с шагом 2,5~\% в диапазоне от 5~\% до 25~\%
-	\item Полупроводниковая структура ЛФД - InGaAs/InP
-	\item Относительно низкий уровень темнового счета при заданных параметрах квантовой эффективности
+	\item High frequency trigger pulses - up to 100~MHz.
+	\item The ability to supply strobe pulses from an external device (External gating mode).
+	\item Wide range of setting the width of the operation window (gate) - from 0.5~ns to 25~ns.
+	\item Setting the delay of opening the response window relative to the gate pulse (Trigger delay) in the range up to 10~ns with high resolution in time - 10~ps.
+	\item Ability to set <<dead time>> in a wide range - from 0.1~μs to 100~μs.
+	\item The ability to adjust quantum efficiency in increments of 2.5~\% in the range from 5~\% to 25~\%.
+	\item The semiconductor structure of an APD - InGaAs/InP.
+	\item Relatively low level of dark counting with given parameters of quantum efficiency.
 \end{enumerate}
 
-В ходе исследования для обеспечения реалистичных условий атаки злоумышленника на измерительное оборудование в составе системы ККБЧ устройство рассматривалось, как <<черный ящик>>, то есть оно не вскрывалось и не производились манипуляции с внутренними платами и микросхемами. Все настройки детектора выставлялись в соответствии со штатным режимом для систем квантовой коммуникации на боковых частотах модулированного излучения. 
+In the course of the study, to ensure realistic conditions for the eavesdropper to attack the measuring device as part of the SCW QKD system, it was considered as a <<black box>> and it was not opened and no manipulations were made with internal boards and microcircuits. All detector settings were set in accordance with the standard mode for SCW QKD system.
 
-Для успешного осуществления атаки с навязыванием ключа злоумышленнику требуется манипулировать детектором, то есть форсировать срабатывания и их отсутствие в нужные моменты времени, при этом предполагается, что тип применяемого измерительного оборудования известен, но непосредственный доступ к нему отсутствует. В таких рамках модель атаки ограничивается возможностью воздействия на детектор только оптическими методами непосредственно из квантового канала. 
+In order to successfully carry out a FSA, an eavesdropper needs to manipulate the detector
+ in a way of forcing the clicks and their absence at the right time. It is assumed that the type of measuring device used is known to the eavesdropper, but there is no direct access to it. In that case the model is limited by the possibility of influencing the detector only by optical methods directly from the quantum channel.
 
+It is known that APD in the linear mode, when a constant optical power is supplied to it, the photocurrent increases. Therefore, when a constant value is applied, the reverse bias voltage $-V_{bias}$ and in the presence of a resistor extinguishing the avalanche in the circuit, the voltage drop across the resistor increases, and on APD is reduced. The essence of the attack lies in switching the detector from the Geiger mode, or <<blinding>> it. Thus, it's operating mode is shifted relative to the breakdown voltage of the APD. With this approach, even additional pulses of $V_{gate}$ become insufficient and the diode is always in the mode of linear dependence of the photocurrent on the incident optical power.  
 
-Известно, что в линейном режиме работы ЛФД при подачи на него постоянной оптической мощности увеличивается фототок, следовательно при подаче постоянного значения напряжение обратного смещения $-V_{bias}$ и при наличии в цепи гасящего лавину резистора, величина падения напряжения на резисторе растет, а на ЛФД снижается. Суть атаки с выведением детектора из режима Гейгера, или <<ослеплением>> ДОФ, сводится к тому, чтобы сместить режим работы относительно напряжения пробоя ЛФД. При таком подходе даже дополнительных импульсов $V_{gate}$ становится недостаточно и диод все время находится в режиме линейной зависимости фототока от величины мощности оптического излучения, падаюшего на него.  
+Nevertheless, in linear mode, it remains possible to exceed the threshold value of the photocurrent $I_{det}$ and generate a detector impulse.
 
-Тем не менее, в линейном режиме остается возможность превысить пороговое значение фототока $I_{det}$ и сформировать импульс срабатывания детектора.
-
-Таким образом, методика выведения детектора из режима счета фотонов в линейный режим для осуществления атаки с навязыванием ключа (<<Faked-state attack>>) легко формализуется. Экспериментальное исследование уязвимости детектора одиночных фотонов к такому типа атак реализуется в три этапа, представленных на рисунке \ref{fig:Method_2.3}:
+Thus, the technique of removing the detector from the photon-counting mode to the linear mode for carrying out the FSA is easily formalized. An experimental study of the vulnerability of the SPD to this type of attack is carried out in three stages, shown in the figure \ref{fig:Method_2.3}:
 %
  \begin{figure}[ht] 
   \centering
   \includegraphics[scale=0.5]{Method_2.3.eps}
-  \caption{Методика выведения детектора из режима Гейгера}
+  \caption{Blinding methods}
   \label{fig:Method_2.3}
 \end{figure}
 %
  \begin{enumerate}
-	\item Определение величины постоянной оптической мощности, достаточной для выведения детектора из режима Гейгера
-	\item Подстройка оптического импульса под окно срабатывания детектора одиночных фотонов
-	\item Определение зависимости вероятности срабатывания детектора от величины энергии фотонов в импульсе
+	\item Determining the constant optical power sufficient to switch the detector from the Geiger mode.
+	\item Optical pulse adjustment for the SPD gate
+	\item Dependence of the click probability on the photon energy in the trigger pulse value.
 \end{enumerate}
 %
-В результате экспериментального исследования получен ряд зависимостей вероятности формирования отсчета от величины оптической мощности, применяемой для выведения детектора из режима счета фотонов, для различных оптических контролирующих импульсов (рис. \ref{fig:Probability_vs_Energy}). 
+As a result of the experimental study detector click probabilities were obtained (fig. \ref{fig:Probability_vs_Energy}). 
 
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.5]{Probability_vs_Energy.png}
-  \caption{Зависимость вероятности срабатывания детектора от энергии контролирующего импульса}
+  \caption{Detector click probability as a function of trigger pulse energy}
   \label{fig:Probability_vs_Energy}
 \end{figure}
 
 
-Таким образом показано, что использование коммерческих детекторов одиночных фотонов на основе лавинных фотодиодов в режиме Гейгера модели id210 с частотой стробирования 100 МГц  требует применения дополнительных средств защиты от атаки с выведением из режима Гейгера при помощи коротких оптических импульсов с энергией не менее 15,4 фДж и при постоянном уровне оптической засветки средним уровнем мощности излучения не менее 35 нВт.  
+ТThus, it has been shown that the use of SPD based on APD in the Geiger mode (id210) with a gating frequency of 100~MHz requires the use of additional means of protection against attack with the switching from the Geiger mode using short optical pulses with an energy of at least 15.4~fJ and at a constant level of optical illumination with an average radiation power level of at least 35~nW. 
 
  \underline{\textbf{Третья глава}} посвящена исследованию предложенной автором работы атаки с навязыванием ключа на системы ККБЧ. Оценены границы применимости данной атаки с учетом характеристик и параметром оборудования в составе блока получателя. Для определения попыток злоумышленника провести описанную выше атаку предлагается измерять интенсивность центральной оптической моды. Центральная мода отражается узкополосным фильтром на основе брэгговской решетки. Для того, чтобы её можно было измерить в схеме устанавливается волоконно-оптический циркулятор. Все излучение, которое после фазовых модуляторов в приемном блоке поступает на первый порт циркулятора направляется во второй порт на оптический фильтр. Отраженная центральная мода направляется в третий порт циркулятора. Для того, чтобы измерять центральную, которая, как показано в разделе, должна быть порядка 700~нВт, предлагается использовать мониторный фотодиод. Так как. злоумышленника есть возможность подбирать интенсивность на центральной моде, то очевидным является то, что мониторный фотодиод, установленный на выходе с 3-го порта, можно также контролировать оптическими методами. Для того, чтобы избежать этого, предлагается использовать волоконно-оптическое зеркало, например широко доступное зеркало Фарадея, и пассивный оптический аттенюатор. Сам мониторный фотодиод предлагается устанавливать в 4-ом порту циркулятора. Таким образом, излучение с центральной модой поступает на 3-ий порт, проходит аттенюатор в прямом направлении, отражается от волоконного зеркала, проходит аттенюатор в обратном направлении и поступает на 4-й порт, где установлен мониторный фотодиод.         
  \begin{figure}[ht]
