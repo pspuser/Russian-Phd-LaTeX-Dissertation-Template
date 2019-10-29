@@ -107,32 +107,33 @@ As a result of the experimental study detector click probabilities were obtained
 \end{figure}
 
 
-ТThus, it has been shown that the use of SPD based on APD in the Geiger mode (id210) with a gating frequency of 100~MHz requires the use of additional means of protection against attack with the switching from the Geiger mode using short optical pulses with an energy of at least 15.4~fJ and at a constant level of optical illumination with an average radiation power level of at least 35~nW. 
+Thus, it has been shown that the use of SPD based on APD in the Geiger mode (id210) with a gating frequency of 100~MHz requires the use of additional means of protection against attack with the switching from the Geiger mode using short optical pulses with an energy of at least 15.4~fJ and at a constant level of optical illumination with an average radiation power level of at least 35~nW. 
 
- \underline{\textbf{Третья глава}} посвящена исследованию предложенной автором работы атаки с навязыванием ключа на системы ККБЧ. Оценены границы применимости данной атаки с учетом характеристик и параметром оборудования в составе блока получателя. Для определения попыток злоумышленника провести описанную выше атаку предлагается измерять интенсивность центральной оптической моды. Центральная мода отражается узкополосным фильтром на основе брэгговской решетки. Для того, чтобы её можно было измерить в схеме устанавливается волоконно-оптический циркулятор. Все излучение, которое после фазовых модуляторов в приемном блоке поступает на первый порт циркулятора направляется во второй порт на оптический фильтр. Отраженная центральная мода направляется в третий порт циркулятора. Для того, чтобы измерять центральную, которая, как показано в разделе, должна быть порядка 700~нВт, предлагается использовать мониторный фотодиод. Так как. злоумышленника есть возможность подбирать интенсивность на центральной моде, то очевидным является то, что мониторный фотодиод, установленный на выходе с 3-го порта, можно также контролировать оптическими методами. Для того, чтобы избежать этого, предлагается использовать волоконно-оптическое зеркало, например широко доступное зеркало Фарадея, и пассивный оптический аттенюатор. Сам мониторный фотодиод предлагается устанавливать в 4-ом порту циркулятора. Таким образом, излучение с центральной модой поступает на 3-ий порт, проходит аттенюатор в прямом направлении, отражается от волоконного зеркала, проходит аттенюатор в обратном направлении и поступает на 4-й порт, где установлен мониторный фотодиод.         
+The model of the FSA on SCW~QKD systems is proposed in  \underline{\textbf{the third chapter}}. The applicability limits of this attack are estimated taking into account the characteristics and equipment parameters in the receiver unit. To determine the eavesdropper attempts to carry out the attack described above, it is proposed to measure the intensity of the central optical mode. The central mode is reflected by a narrow-band filter based on the Bragg grating. In order to be able to measure it, a fiber optic circulator is installed in the circuit. All radiation, which, after phase modulators in the receiving unit, enters the first port of the circulator is sent to the second port to the optical filter. The reflected central mode is sent to the third port of the circulator. In order to measure the central one, which, as shown in the section, should be of the order of 700 ~ nW, it is proposed to use a monitor photodiode. As. If the eavesdropper has the opportunity to select the intensity on the central mode, it is obvious that the monitor photodiode installed at the output from the 3rd port can also be controlled by optical methods. In order to avoid this, it is proposed to use a fiber optic mirror, for example a widely available Faraday mirror, and a fixed passive optical attenuator. The monitor photodiode itself is proposed to be installed in the 4th port of the circulator. Thus, the radiation with the central mode arrives at the 3rd port, passes the attenuator in the forward direction, is reflected from the fiber mirror, passes the attenuator in the opposite direction, and arrives at the 4th port where the monitor photodiode is installed.       
  \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.25]{scw-setup_Countermeasure.pdf}
-  \caption{Принципиальная оптическая схема предлагаемой контрмеры против атаки с <<поддельными>> состояниями}
+  \caption{Model of an eavesdropper for FSA implementation}
   \label{fig:countermeasure}
 \end{figure}
+
+
+The figure \ref{fig:Watchdog_photodiode} shows two dependencies: the lower limit of the optical power required to switch the photon detector from the Geiger mode and is the minimum required for a successful FSA by the eavesdropper; the upper limit is the optical power value, which is based on the parameters of the receiving module of the quantum communication system and the upper limit on the optical power of the control pulses. The minimum level in accordance with the calculation is 0.7 ~ μW, and the maximum is of the order of 300 ~ μW (within the framework of this study), but in fact it is limited by the threshold value of the APD inside the DOF, at which the current becomes too large and the diode burns out, incapacitating the whole device. Typical quantities are units and tens of milliwatts.
  
- На рисунке \ref{fig:Watchdog_photodiode} представлены две зависимости: нижний предел -- величина оптической мощности, которая требуется для выведения детектора фотонов из режима Гейгера и является минимальной необходимой для проведения успешной атаки злоумышленником; верхняя граница - величина оптической мощности, которая получена исходя из параметров приёмного модуля системы квантовой коммуникации и ограничения сверху на величину оптической мощности контролирующих импульсов. Минимальный уровень в соотвествии с расчетом составляет 0.7~мкВт, а максимальный - величину порядка 300~мкВт (в рамках данного исследования), однако на деле ограничен пороговой величиной ЛФД внутри ДОФ, при достижении которой ток становится слишком большим и диод сгорает, выводя из строя всё устройство. Типичной величиной являются единицы и десятки милливатт. 
+Based on the dependencies we can estimate the attenuation in a fixed attenuator, which will be sufficient to protect the monitor photodiode from exposure to light, and additional measures will not be required to expand the dynamic range of sensitivity to the input optical power in the direction of increase, since at optical powers below few nanowatts the measurement error becomes quite high.
 
+Based on this, the attenuation value of 10~dB is sufficient, since the reflected central optical mode at the output from the 3rd port of the circulator passes through the attenuating element for the first time, and then after reflection from the mirror for the second time. The resulting attenuation by 20~dB, or 100 times, will reduce the minimum power level at the center frequency, which is enough to remove the detector from the photon counting mode, to a value of the order of 7~nW, which satisfies the requirements described above. The maximum level (within the framework of this researc) will decrease to about 3~μW.
 
-С учётом данной зависимости можно оценить величину ослабления в фиксированном аттенюаторе, которой будет достаточно для защиты мониторного фотодиода от засветки, и при этом не потребуются дополнительные меры по расширению динамического диапазона чувствительности к входной оптической мощности в сторону увеличения, так как при оптических мощностях ниже единиц нановатт погрешность измерений становится достаточно высокой.   
-
-Исходя из этого, величины аттенюации в 10~дБ достаточно, так как отраженная центральная на выходе с 3-го порта циркулятора прохоит через ослабляющий элемент в первый раз, а затем после отражения от зеркала во второй раз. Результирующее ослабление на 20~дБ, или в 100 раз, снизит минимальный уровень мощности на центральной частоте, которого достаточно для выведения детектора из режима счета фотонов, до величины порядка 7~нВт, что удовлетворяет требованиям, описанным выше. Максимальный уровень (в рамках данного исследования) снизится при этом примерно до 3~мкВт. 
 
  \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.5]{images/Watchdog_photodiode.png}
-  \caption{Динамика и границы оптической мощности на мониторном фотодиоде}
+  \caption{Optical power on monitoring photodiode}
   \label{fig:Watchdog_photodiode}
 \end{figure}
 
 
- В третьей главе показано, что измерение величины оптического излучения на несущей частоте, отраженного от оптического фильтра, при помощи мониторного фотодиода в приемном блоке системы квантовой коммуникации на боковых частотах в диапазоне от 7 нВт до 2,93 мкВт с применением дополнительных мер в виде пассивного оптического аттенюатора номиналом 10 дБ для его защиты позволяет противостоять атаке с выведением детектора одиночных фотонов из режима Гейгера и навязыванием ключа нелегитимным пользователем. 
+The third chapter shows that measuring the amount of optical radiation at the carrier frequency reflected from the optical filter using a monitor photodiode in the receiving unit of the quantum communication system at side frequencies in the range from 7~nW to 2.93~μW using additional countermeasures in the form of a passive optical attenuator with a losses nominal value of 10 dB to protect it allows you to withstand an attack by switching SPD from Geiger mode and FSA.
 
 % Можно сослаться на свои работы в автореферате. Для этого в файле
 % \verb!Synopsis/setup.tex! необходимо присвоить положительное значение
@@ -143,19 +144,19 @@ As a result of the experimental study detector click probabilities were obtained
 % }{}
 % Использование подстрочных ссылок внутри таблиц может вызывать проблемы.
 
- В \underline{\textbf{четвертой главе}} приведено описание когерентных состояний, которые нашли широкое применение в системах квантовой коммуникации, ввиду того, что в качестве источника излучения используются когерентные лазеры. 
- 
- Отличительно особенностью систем квантовой коммуникации на боковых частотах модулированного излучения является генерация многомодовых когерентных состояний на разных оптических модах, зависящих от частоты модулирующего сигнала, как показано на рисунке \ref{fig:multimodes}. 
+ \underline{\textbf{The fourth chapter}} describes the coherent states that are widely used in QCS, because coherent lasers are widely used as a radiation source.
+ 
+  A distinctive feature of SCW QKD systems is the generation of multimode coherent states at different optical modes, depending on the frequency of the modulating signal, as shown in the figure \ref{fig:multimodes}. 
 
  \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.4]{Modes_rus.pdf}
-  \caption{Принципиальная схема генерации боковых частот}
+  \caption{Sidebands generation scheme}
   \label{fig:multimodes}
 \end{figure}
 
 
-Определим приготовленные состояния. Входное (немодулированное) состояние на стороне модулятора отправителя (Алиса) и получателя (Боб) (далее именуемые, как $A$ or $B$) определяется, как $|\sqrt{\mu_0}\rangle_0\otimes|\mathrm{vac}\rangle_{SB}$, где $|\mathrm{vac}\rangle_{SB}$ это вакуумное состояние на боковых и $|\sqrt{\mu_0}\rangle_0$ это когерентное состояние несущей частоты с амплитудой, определенной средним числом фотонов $\mu_0$ в окне пропускания. формируемая когерентным монохроматическим излучением с оптической частотой $\omega$. Фаза несущей волны принимается как опорная и все остальные фазы считаются по отношению к ней. Электро-оптический фазовый модулятор (с частотой колебаний микроволнового поля $\Omega$ и её фазой $\varphi_A$ или $\varphi_B$) перераспределяет энергию между взаимодействующими модами (поле на выходе модулятора приобретает боковые частоты $\omega_k=\omega+k\Omega$, ограничим рассматриваемый нами случай $2S$ боковыми частотами и пусть целое число $k$ мод ограничено пределами $-S\le k\le S$), так, что состояние поля на выходе модулятора - это многомодовое когерентное состояние: 
+Define these states as follows. Input (unmodulated) state at sender's sides (Alice) and (Bob) (denoted, as $A$ or $B$) are denoted, as $|\sqrt{\mu_0}\rangle_0\otimes|\mathrm{vac}\rangle_{SB}$, where $|\mathrm{vac}\rangle_{SB}$ is the sideband's vacuum state and $|\sqrt{\mu_0}\rangle_0$ is a carrier's coherent state with an amplitude (mean photon number per pulse $\mu_0$). The carrier is formed by coherent light beam on a frequency $\omega$. Carrier's phase is supposed to be reference and other phase shifts denotes with respect to it. Электро-оптический фазовый модулятор (с частотой колебаний микроволнового поля $\Omega$ и её фазой $\varphi_A$ или $\varphi_B$) перераспределяет энергию между взаимодействующими модами (поле на выходе модулятора приобретает боковые частоты $\omega_k=\omega+k\Omega$, ограничим рассматриваемый нами случай $2S$ боковыми частотами и пусть целое число $k$ мод ограничено пределами $-S\le k\le S$), так, что состояние поля на выходе модулятора - это многомодовое когерентное состояние: 
 %
 \begin{equation}\label{phi}
 |\psi_0(\varphi_j)\rangle = \bigotimes_{k=-S}^S|{\alpha_k(\varphi_j)}\rangle_k,
